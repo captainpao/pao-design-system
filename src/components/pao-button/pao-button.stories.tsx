@@ -1,21 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { ButtonSize, ButtonVariant } from './pao-button';
 import './pao-button';
-import { PaoButton } from './pao-button';
+
+interface ButtonStoryArgs {
+  variant: ButtonVariant;
+  size: ButtonSize;
+  disabled: boolean;
+  slot: string;
+}
 
 const meta = {
   title: 'Components/Button',
-  tags: ['autodocs'],
-  render: (args) => html`
-    <pao-button
-      variant=${args.variant}
-      size=${args.size}
-      ?disabled=${args.disabled}
-      @paoClick=${args.onClick}
-    >
-      ${args.slot}
-    </pao-button>
-  `,
+  component: 'pao-button',
+  args: {
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
+    slot: 'Button',
+  },
   argTypes: {
     variant: {
       control: { type: 'select' },
@@ -28,61 +31,50 @@ const meta = {
     disabled: { control: 'boolean' },
     slot: { control: 'text' },
   },
-} satisfies Meta<PaoButton>;
+  render: (args: ButtonStoryArgs) => html`
+    <pao-button
+      variant=${args.variant}
+      size=${args.size}
+      ?disabled=${args.disabled}
+    >${args.slot}</pao-button>
+  `,
+} as Meta<ButtonStoryArgs>;
 
 export default meta;
-type Story = StoryObj<PaoButton>;
+type Story = StoryObj<ButtonStoryArgs>;
 
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    size: 'md',
-    disabled: false,
-    slot: 'Button',
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    size: 'md',
-    disabled: false,
-    slot: 'Button',
   },
 };
 
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
-    size: 'md',
-    disabled: false,
-    slot: 'Button',
   },
 };
 
 export const Small: Story = {
   args: {
-    variant: 'primary',
     size: 'sm',
-    disabled: false,
-    slot: 'Button',
   },
 };
 
 export const Large: Story = {
   args: {
-    variant: 'primary',
     size: 'lg',
-    disabled: false,
-    slot: 'Button',
   },
 };
 
 export const Disabled: Story = {
   args: {
-    variant: 'primary',
-    size: 'md',
     disabled: true,
-    slot: 'Button',
   },
 };

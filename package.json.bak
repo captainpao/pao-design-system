@@ -1,0 +1,64 @@
+{
+  "name": "pao-design-system",
+  "version": "0.1.0",
+  "description": "Framework-agnostic Web Component design system (Lit)",
+  "type": "module",
+  "main": "./dist/pao-design-system.umd.js",
+  "module": "./dist/pao-design-system.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/pao-design-system.js",
+      "require": "./dist/pao-design-system.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "tsc && vite build",
+    "build-storybook": "storybook build",
+    "lint": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write src/**/*.{ts,tsx,scss,md}",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "web-components",
+    "lit",
+    "design-system"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.6.20",
+    "@storybook/addon-interactions": "7.6.20",
+    "@storybook/addon-links": "7.6.20",
+    "@storybook/blocks": "7.6.20",
+    "@storybook/web-components": "7.6.20",
+    "@storybook/web-components-vite": "7.6.20",
+    "@storybook/testing-library": "0.2.2",
+    "@typescript-eslint/eslint-plugin": "7.16.1",
+    "@typescript-eslint/parser": "7.16.1",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-storybook": "0.8.0",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.7",
+    "prettier": "3.3.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "sass": "1.77.8",
+    "storybook": "7.6.20",
+    "typescript": "5.5.3",
+    "vite": "5.3.4",
+    "vite-plugin-dts": "3.9.1"
+  },
+  "dependencies": {
+    "lit": "3.1.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix",
+    "*.{ts,tsx,scss,md}": "prettier --write"
+  }
+}

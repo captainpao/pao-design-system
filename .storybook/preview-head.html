@@ -1,0 +1,13 @@
+<script type="module">
+  window.global = window;
+  window.process = { env: {} };
+  window.STORYBOOK_ENV = 'web-components';
+
+  // Disable SES/lockdown
+  window.LOCKDOWN_OPTIONS = {
+    errorTaming: 'unsafe',
+    consoleTaming: 'unsafe',
+    errorTrapping: 'platform',
+    unhandledRejectionTrapping: 'report',
+  };
+</script>

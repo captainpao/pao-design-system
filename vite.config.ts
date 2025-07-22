@@ -3,6 +3,9 @@ import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 
 export default defineConfig({
+  optimizeDeps: {
+    include: ['lit', 'lit/decorators.js'],
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
