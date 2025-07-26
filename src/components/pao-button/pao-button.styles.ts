@@ -6,11 +6,11 @@ export const styles = css`
   }
 
   .pao-button {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'VerlagSSm', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 400;
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
