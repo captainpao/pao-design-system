@@ -1,4 +1,5 @@
 import { css } from 'lit';
+import '../../styles/_fonts.scss';
 
 export const styles = css`
   :host {

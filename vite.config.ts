@@ -6,6 +6,14 @@ export default defineConfig({
   optimizeDeps: {
     include: ['lit', 'lit/decorators.js'],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Use modern Sass API
+        api: 'modern-compiler',
+      },
+    },
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
