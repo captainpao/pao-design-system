@@ -22,7 +22,6 @@ export class PaoIcon extends LitElement {
 
   render() {
     const iconSvg = iconMap[this.name] || '';
-    console.log('iconSvg:', iconSvg);
     return html`
       <span class="pao-icon ${this.size} ${this.color}">${unsafeHTML(iconSvg)}</span>
     `;
