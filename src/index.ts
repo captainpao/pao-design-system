@@ -2,3 +2,4 @@
 import './styles/index.scss';
 
 export * from './components/pao-button/pao-button';
+export * from './components/pao-button-group/pao-button-group';
