@@ -35,6 +35,7 @@ export class PaoButton extends LitElement {
   render() {
     return html`
       <button
+        part="button"
         class="pao-button ${this.variant} ${this.size}"
         ?disabled=${this.disabled}
         @click=${this.handleClick}
