@@ -29,8 +29,8 @@ const meta = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'ghost'],
-      description: 'The visual style variant of the button.',
+      options: ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger'],
+      description: 'The visual and semantic variant of the button.',
       table: {
         type: { summary: 'ButtonVariant' },
         defaultValue: { summary: 'primary' },
@@ -101,15 +101,15 @@ export const Secondary: Story = {
   },
 };
 
-export const Ghost: Story = {
+export const Tertiary: Story = {
   args: {
-    variant: 'ghost',
-    slot: 'Ghost Button',
+    variant: 'tertiary',
+    slot: 'Tertiary Button',
   },
   parameters: {
     docs: {
       description: {
-        story: 'Ghost buttons have minimal visual emphasis, useful for tertiary actions.',
+        story: 'Tertiary buttons have minimal visual emphasis, useful for low-priority actions.',
       },
     },
   },
@@ -143,6 +143,48 @@ export const Large: Story = {
   },
 };
 
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    slot: 'Success Button',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Success buttons indicate positive actions or confirmations.',
+      },
+    },
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    variant: 'warning',
+    slot: 'Warning Button',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Warning buttons indicate caution or actions that require attention.',
+      },
+    },
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    variant: 'danger',
+    slot: 'Danger Button',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Danger buttons indicate destructive or high-risk actions.',
+      },
+    },
+  },
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true,
@@ -152,6 +194,26 @@ export const Disabled: Story = {
     docs: {
       description: {
         story: 'Disabled buttons indicate that an action is not currently available.',
+      },
+    },
+  },
+};
+
+export const AllVariants: Story = {
+  render: () => html`
+    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+      <pao-button variant="primary">Primary</pao-button>
+      <pao-button variant="secondary">Secondary</pao-button>
+      <pao-button variant="tertiary">Tertiary</pao-button>
+      <pao-button variant="success">Success</pao-button>
+      <pao-button variant="warning">Warning</pao-button>
+      <pao-button variant="danger">Danger</pao-button>
+    </div>
+  `,
+  parameters: {
+    docs: {
+      description: {
+        story: 'A showcase of all button variants.',
       },
     },
   },

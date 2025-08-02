@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './pao-button.styles';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 @customElement('pao-button')

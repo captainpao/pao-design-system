@@ -1,0 +1,48 @@
+// Button Variant Colors
+:root {
+  // Primary variant colors
+  --pao-color-primary: #0066cc;
+  --pao-color-primary-hover: #0052a3;
+  --pao-color-primary-active: #004080;
+  --pao-color-primary-text: #ffffff;
+
+  // Secondary variant colors
+  --pao-color-secondary: #e6e6e6;
+  --pao-color-secondary-hover: #d1d1d1;
+  --pao-color-secondary-active: #b8b8b8;
+  --pao-color-secondary-text: #333333;
+
+  // Tertiary variant colors
+  --pao-color-tertiary: #f8f9fa;
+  --pao-color-tertiary-hover: #e9ecef;
+  --pao-color-tertiary-active: #dee2e6;
+  --pao-color-tertiary-text: #495057;
+
+  // Success variant colors
+  --pao-color-success: #28a745;
+  --pao-color-success-hover: #218838;
+  --pao-color-success-active: #1e7e34;
+  --pao-color-success-text: #ffffff;
+
+  // Warning variant colors
+  --pao-color-warning: #ffc107;
+  --pao-color-warning-hover: #e0a800;
+  --pao-color-warning-active: #d39e00;
+  --pao-color-warning-text: #212529;
+
+  // Danger variant colors
+  --pao-color-danger: #dc3545;
+  --pao-color-danger-hover: #c82333;
+  --pao-color-danger-active: #bd2130;
+  --pao-color-danger-text: #ffffff;
+
+  // Border colors
+  --pao-border-color-light: #d1d1d1;
+  --pao-border-color-medium: #adb5bd;
+  --pao-border-color-dark: #6c757d;
+
+  // Disabled state
+  --pao-color-disabled-background: #e9ecef;
+  --pao-color-disabled-text: #6c757d;
+  --pao-color-disabled-border: #ced4da;
+}

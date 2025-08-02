@@ -19,42 +19,42 @@ export const styles = css`
     z-index: 1;
   }
 
-  /* Override button border radius using CSS variables */
-  .pao-button-group .group-button pao-button::part(button) {
-    border-radius: 0;
+  /* Override button border radius using CSS custom properties */
+  .pao-button-group .group-button {
+    --pao-button-border-radius: 0;
   }
 
   /* First button - only left corners rounded */
-  .pao-button-group .group-button.first:not(.last) pao-button::part(button) {
-    border-radius: 4px 0 0 4px;
+  .pao-button-group .group-button.first:not(.last) {
+    --pao-button-border-radius: 4px 0 0 4px;
   }
 
   /* Last button - only right corners rounded */
-  .pao-button-group .group-button.last:not(.first) pao-button::part(button) {
-    border-radius: 0 4px 4px 0;
+  .pao-button-group .group-button.last:not(.first) {
+    --pao-button-border-radius: 0 4px 4px 0;
   }
 
   /* Single button case */
-  .pao-button-group .group-button.first.last pao-button::part(button) {
-    border-radius: 4px;
+  .pao-button-group .group-button.first.last {
+    --pao-button-border-radius: 4px;
   }
 
   /* Middle buttons - ensure zero radius */
-  .pao-button-group .group-button:not(.first):not(.last) pao-button::part(button) {
-    border-radius: 0;
+  .pao-button-group .group-button:not(.first):not(.last) {
+    --pao-button-border-radius: 0;
   }
 
   /* Rounded corners option - larger radius */
-  .pao-button-group.rounded .group-button.first:not(.last) pao-button::part(button) {
-    border-radius: 20px 0 0 20px;
+  .pao-button-group.rounded .group-button.first:not(.last) {
+    --pao-button-border-radius: 20px 0 0 20px;
   }
 
-  .pao-button-group.rounded .group-button.last:not(.first) pao-button::part(button) {
-    border-radius: 0 20px 20px 0;
+  .pao-button-group.rounded .group-button.last:not(.first) {
+    --pao-button-border-radius: 0 20px 20px 0;
   }
 
-  .pao-button-group.rounded .group-button.first.last pao-button::part(button) {
-    border-radius: 20px;
+  .pao-button-group.rounded .group-button.first.last {
+    --pao-button-border-radius: 20px;
   }
 
   /* Remove spacing between buttons */
@@ -78,8 +78,8 @@ export const styles = css`
   }
 
   /* Remove individual button borders since container has border */
-  .pao-button-group .group-button pao-button::part(button) {
-    border: none;
+  .pao-button-group .group-button {
+    --pao-button-border: none;
   }
 
   /* Add separator between buttons */
@@ -88,9 +88,9 @@ export const styles = css`
   }
 
   /* Active state styling */
-  .pao-button-group .group-button.active pao-button::part(button) {
-    background-color: #0066cc;
-    color: white;
+  .pao-button-group .group-button.active {
+    --pao-button-background: #0066cc;
+    --pao-button-color: white;
   }
 
 `;

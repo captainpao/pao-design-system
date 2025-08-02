@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import { ButtonGroupType, ButtonGroupStyleType, SelectionType, ButtonProps } from './pao-button-group';
+import { ButtonGroupVariant, SelectionType, ButtonProps } from './pao-button-group';
 import { ButtonSize } from '../pao-button/pao-button';
 import './pao-button-group';
 import '../pao-button/pao-button';
@@ -9,8 +9,7 @@ interface ButtonGroupStoryArgs {
   buttons: ButtonProps[];
   className?: string;
   roundedCorners: boolean;
-  type: ButtonGroupType;
-  styleType: ButtonGroupStyleType;
+  variant: ButtonGroupVariant;
   size: ButtonSize;
   selectionType: SelectionType;
   active: number[];
@@ -27,8 +26,7 @@ const meta = {
       { label: 'Option 3' },
     ],
     roundedCorners: false,
-    type: 'primary',
-    styleType: 'outline',
+    variant: 'primary',
     size: 'md',
     selectionType: 'single',
     active: [],
@@ -67,22 +65,13 @@ const meta = {
         defaultValue: { summary: 'false' },
       },
     },
-    type: {
+    variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'mixed'],
-      description: 'Type (color) for all buttons, or use "mixed" for per-button types.',
+      options: ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger'],
+      description: 'The variant for all buttons in the group.',
       table: {
-        type: { summary: 'ButtonGroupType' },
+        type: { summary: 'ButtonGroupVariant' },
         defaultValue: { summary: 'primary' },
-      },
-    },
-    styleType: {
-      control: { type: 'select' },
-      options: ['solid', 'outline'],
-      description: 'Style for all buttons (solid/outline).',
-      table: {
-        type: { summary: 'ButtonGroupStyleType' },
-        defaultValue: { summary: 'outline' },
       },
     },
     size: {
@@ -125,8 +114,7 @@ const meta = {
       .buttons=${args.buttons}
       .className=${args.className}
       .roundedCorners=${args.roundedCorners}
-      .type=${args.type}
-      .styleType=${args.styleType}
+      .variant=${args.variant}
       .size=${args.size}
       .selectionType=${args.selectionType}
       .active=${args.active}
@@ -148,8 +136,7 @@ export const Primary: Story = {
       { label: 'Option 2' },
       { label: 'Option 3' },
     ],
-    type: 'primary',
-    styleType: 'outline',
+    variant: 'secondary',
     defaultActive: [0],
   },
   parameters: {
@@ -169,7 +156,7 @@ export const Multiple: Story = {
       { label: 'Underline' },
     ],
     selectionType: 'multiple',
-    styleType: 'outline',  
+    variant: 'secondary',
     defaultActive: [0, 2],
   },
   parameters: {
@@ -184,8 +171,7 @@ export const Multiple: Story = {
 export const Rounded: Story = {
   args: {
     roundedCorners: true,
-    styleType: 'solid',
-    type: 'primary',
+    variant: 'primary',
     defaultActive: [1],
   },
   parameters: {
@@ -225,16 +211,15 @@ export const Large: Story = {
   },
 };
 
-export const Solid: Story = {
+export const Tertiary: Story = {
   args: {
-    styleType: 'solid',
-    type: 'secondary',
+    variant: 'tertiary',
     defaultActive: [1],
   },
   parameters: {
     docs: {
       description: {
-        story: 'Button group with solid (filled) style buttons.',
+        story: 'Button group with tertiary variant buttons.',
       },
     },
   },
@@ -261,17 +246,134 @@ export const WithDisabled: Story = {
 export const Mixed: Story = {
   args: {
     buttons: [
-      { label: 'Success', type: 'success' },
-      { label: 'Warning', type: 'warning' },
-      { label: 'Danger', type: 'danger' },
+      { label: 'Success', variant: 'success' },
+      { label: 'Warning', variant: 'warning' },
+      { label: 'Danger', variant: 'danger' },
     ],
-    type: 'mixed',
-    styleType: 'solid',
+    variant: 'primary',
   },
   parameters: {
     docs: {
       description: {
-        story: 'Button group with mixed button types - each button can have its own color type.',
+        story: 'Button group with mixed button variants - each button can have its own variant.',
+      },
+    },
+  },
+};
+
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    buttons: [
+      { label: 'Save' },
+      { label: 'Submit' },
+      { label: 'Confirm' },
+    ],
+    defaultActive: [0],
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Success variant button group for positive actions.',
+      },
+    },
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    variant: 'warning',
+    buttons: [
+      { label: 'Caution' },
+      { label: 'Review' },
+      { label: 'Alert' },
+    ],
+    defaultActive: [1],
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Warning variant button group.',
+      },
+    },
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    variant: 'danger',
+    buttons: [
+      { label: 'Delete' },
+      { label: 'Remove' },
+      { label: 'Clear' },
+    ],
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Danger variant button group for destructive actions.',
+      },
+    },
+  },
+};
+
+export const AllVariants: Story = {
+  render: () => html`
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+      <div>
+        <h3>Primary Variant</h3>
+        <pao-button-group
+          .buttons=${[{ label: 'Option 1' }, { label: 'Option 2' }, { label: 'Option 3' }]}
+          variant="primary"
+          .defaultActive=${[0]}
+        ></pao-button-group>
+      </div>
+      <div>
+        <h3>Secondary Variant</h3>
+        <pao-button-group
+          .buttons=${[{ label: 'Option 1' }, { label: 'Option 2' }, { label: 'Option 3' }]}
+          variant="secondary"
+          .defaultActive=${[1]}
+        ></pao-button-group>
+      </div>
+      <div>
+        <h3>Tertiary Variant</h3>
+        <pao-button-group
+          .buttons=${[{ label: 'Option 1' }, { label: 'Option 2' }, { label: 'Option 3' }]}
+          variant="tertiary"
+          .defaultActive=${[2]}
+        ></pao-button-group>
+      </div>
+      <div>
+        <h3>Success Variant</h3>
+        <pao-button-group
+          .buttons=${[{ label: 'Save' }, { label: 'Submit' }, { label: 'Confirm' }]}
+          variant="success"
+          .defaultActive=${[0]}
+        ></pao-button-group>
+      </div>
+      <div>
+        <h3>Warning Variant</h3>
+        <pao-button-group
+          .buttons=${[{ label: 'Caution' }, { label: 'Review' }, { label: 'Alert' }]}
+          variant="warning"
+          .defaultActive=${[1]}
+        ></pao-button-group>
+      </div>
+      <div>
+        <h3>Danger Variant</h3>
+        <pao-button-group
+          .buttons=${[{ label: 'Delete' }, { label: 'Remove' }, { label: 'Clear' }]}
+          variant="danger"
+          .defaultActive=${[2]}
+        ></pao-button-group>
+      </div>
+    </div>
+  `,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Showcase of all button group variants.',
       },
     },
   },

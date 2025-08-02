@@ -3,16 +3,14 @@ import { customElement, property, state } from 'lit/decorators.js';
 import { styles } from './pao-button-group.styles';
 import { ButtonVariant, ButtonSize } from '../pao-button/pao-button';
 
-export type ButtonGroupType = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'mixed';
-export type ButtonGroupStyleType = 'solid' | 'outline';
+export type ButtonGroupVariant = ButtonVariant;
 export type SelectionType = 'single' | 'multiple';
 
 export interface ButtonProps {
   label: string;
   disabled?: boolean;
   variant?: ButtonVariant;
-  type?: ButtonGroupType;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 @customElement('pao-button-group')
@@ -23,16 +21,13 @@ export class PaoButtonGroup extends LitElement {
   buttons: ButtonProps[] = [];
 
   @property({ type: String })
-  className?: string;
+  className = '';
 
   @property({ type: Boolean })
   roundedCorners = false;
 
   @property({ type: String })
-  type: ButtonGroupType = 'primary';
-
-  @property({ type: String })
-  styleType: ButtonGroupStyleType = 'outline';
+  variant: ButtonGroupVariant = 'primary';
 
   @property({ type: String })
   size: ButtonSize = 'md';
@@ -60,7 +55,7 @@ export class PaoButtonGroup extends LitElement {
     }
   }
 
-  updated(changedProperties: Map<string, any>) {
+  updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('active')) {
       this._isControlled = this.active.length > 0;
     }
@@ -70,37 +65,21 @@ export class PaoButtonGroup extends LitElement {
     return this._isControlled ? this.active : this._internalActive;
   }
 
-  private mapTypeToVariant(type: ButtonGroupType): ButtonVariant {
-    switch (type) {
-      case 'primary':
-      case 'success':
-      case 'warning':
-      case 'danger':
-        return 'primary';
-      case 'secondary':
-      case 'tertiary':
-        return 'secondary';
-      default:
-        return 'primary';
-    }
-  }
-
   private getButtonVariant(buttonProps: ButtonProps, index: number): ButtonVariant {
-    if (this.type === 'mixed' && buttonProps.type) {
-      return this.mapTypeToVariant(buttonProps.type);
-    }
-    
+    // If button has its own variant specified, use it
     if (buttonProps.variant) {
       return buttonProps.variant;
     }
 
+    // For button groups, we'll use the group's variant
+    // Active buttons will use primary variant for emphasis, unless the group is already primary
     const isActive = this.currentActive.includes(index);
     
-    if (this.styleType === 'outline') {
-      return isActive ? 'primary' : 'ghost';
-    } else {
-      return isActive ? 'primary' : 'secondary';
+    if (isActive && this.variant !== 'primary') {
+      return 'primary';
     }
+    
+    return this.variant;
   }
 
   private handleButtonClick(index: number) {
@@ -144,7 +123,7 @@ export class PaoButtonGroup extends LitElement {
   render() {
     return html`
       <div 
-        class="pao-button-group ${this.className || ''} ${this.roundedCorners ? 'rounded' : ''}"
+        class="pao-button-group ${this.className} ${this.roundedCorners ? 'rounded' : ''}"
         role="group"
       >
         ${this.buttons.map((buttonProps, index) => {
