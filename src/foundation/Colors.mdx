@@ -1,0 +1,405 @@
+import { Meta } from '@storybook/blocks';
+import '../styles/index.scss';
+
+<Meta title="Foundation/Colors" />
+
+# Colors
+
+Our design system uses a comprehensive color palette based on Bootstrap's color system, ensuring consistency and accessibility across all components.
+
+## Theme Colors
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
+
+### Primary
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Primary</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-primary)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Primary</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#0d6efd</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-primary-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Primary Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#cfe2ff</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-primary-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Primary Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#0a58ca</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Secondary
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Secondary</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-secondary)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Secondary</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#6c757d</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-secondary-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Secondary Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#e2e3e5</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-secondary-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Secondary Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#565e64</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Success
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Success</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-success)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Success</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#198754</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-success-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Success Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#d1e7dd</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-success-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Success Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#146c43</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Info
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Info</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-info)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Info</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#0dcaf0</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-info-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Info Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#cff4fc</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-info-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Info Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#0aa2c0</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Warning
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Warning</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-warning)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Warning</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#ffc107</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-warning-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Warning Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#fff3cd</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-warning-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Warning Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#cc9a06</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Danger
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Danger</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-danger)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Danger</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#dc3545</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-danger-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Danger Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#f8d7da</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-danger-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Danger Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#b02a37</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Light
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Light</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#f8f9fa</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-light-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Light Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#ffffff</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-light-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Light Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#e9ecef</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Dark
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Dark</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#212529</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-dark-light)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Dark Light</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#343a40</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-color-dark-dark)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Dark Dark</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#0d0d0d</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+## Grayscale Colors
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Gray Scale</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-100)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 100</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#f8f9fa</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-200)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 200</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#e9ecef</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-300)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 300</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#dee2e6</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-400)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 400</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#ced4da</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-500)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 500</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#adb5bd</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-600)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 600</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#6c757d</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-700)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 700</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#495057</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-800)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 800</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#343a40</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.5rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--pao-gray-900)', borderRadius: '6px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Gray 900</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#212529</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+## Utility Colors
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+
+### Background & Text
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Background & Text</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-body-bg)', borderRadius: '8px', border: '1px solid var(--pao-border-color)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Body Background</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#ffffff</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-body-color)', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.2)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Body Color</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#212529</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Links & Interactive
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Links & Interactive</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-link-color)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Link Color</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#0d6efd</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-link-hover-color)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Link Hover</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#0a58ca</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Borders & Highlights
+<div style={{ backgroundColor: 'var(--pao-body-bg)', border: '1px solid var(--pao-border-color)', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h4 style={{ marginTop: 0, marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>Borders & Highlights</h4>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-border-color)', borderRadius: '8px', border: '1px solid var(--pao-border-color)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Border Color</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#dee2e6</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-code-color)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Code Color</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#d63384</code>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', backgroundColor: 'var(--pao-gray-50)', borderRadius: '8px' }}>
+      <div style={{ width: '48px', height: '48px', backgroundColor: 'var(--pao-highlight-bg)', borderRadius: '8px', border: '1px solid rgba(0, 0, 0, 0.1)' }}></div>
+      <div>
+        <div style={{ fontWeight: 600, color: 'var(--pao-body-color)', fontSize: '0.875rem' }}>Highlight Background</div>
+        <code style={{ fontSize: '0.75rem', color: 'var(--pao-gray-600)' }}>#fff3cd</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+## Usage
+
+Colors are available as CSS custom properties and can be used throughout your components:
+
+```css
+.my-component {
+  background-color: var(--pao-color-primary);
+  color: var(--pao-color-primary-text);
+  border-color: var(--pao-border-color);
+}
+```
+
+## Accessibility
+
+All colors in this system meet WCAG 2.1 contrast requirements for text readability. When using colors, ensure sufficient contrast ratios between text and background colors.

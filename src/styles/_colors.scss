@@ -1,42 +1,80 @@
-// Button Variant Colors
+// Color System
 :root {
-  // Primary variant colors
-  --pao-color-primary: #0066cc;
+  // Theme Colors
+  --pao-color-primary: #0d6efd;
+  --pao-color-primary-light: #cfe2ff;
+  --pao-color-primary-dark: #0a58ca;
+  
+  --pao-color-secondary: #6c757d;
+  --pao-color-secondary-light: #e2e3e5;
+  --pao-color-secondary-dark: #565e64;
+  
+  --pao-color-success: #198754;
+  --pao-color-success-light: #d1e7dd;
+  --pao-color-success-dark: #146c43;
+  
+  --pao-color-info: #0dcaf0;
+  --pao-color-info-light: #cff4fc;
+  --pao-color-info-dark: #0aa2c0;
+  
+  --pao-color-warning: #ffc107;
+  --pao-color-warning-light: #fff3cd;
+  --pao-color-warning-dark: #cc9a06;
+  
+  --pao-color-danger: #dc3545;
+  --pao-color-danger-light: #f8d7da;
+  --pao-color-danger-dark: #b02a37;
+  
+  --pao-color-light: #f8f9fa;
+  --pao-color-light-light: #ffffff;
+  --pao-color-light-dark: #e9ecef;
+  
+  --pao-color-dark: #212529;
+  --pao-color-dark-light: #343a40;
+  --pao-color-dark-dark: #0d0d0d;
+
+  // Grayscale Colors
+  --pao-gray-100: #f8f9fa;
+  --pao-gray-200: #e9ecef;
+  --pao-gray-300: #dee2e6;
+  --pao-gray-400: #ced4da;
+  --pao-gray-500: #adb5bd;
+  --pao-gray-600: #6c757d;
+  --pao-gray-700: #495057;
+  --pao-gray-800: #343a40;
+  --pao-gray-900: #212529;
+
+  // Utility Colors
+  --pao-body-bg: #ffffff;
+  --pao-body-color: #212529;
+  --pao-link-color: #0d6efd;
+  --pao-link-hover-color: #0a58ca;
+  --pao-border-color: #dee2e6;
+  --pao-code-color: #d63384;
+  --pao-highlight-bg: #fff3cd;
+
+  // Button Variant Colors (for backward compatibility)
   --pao-color-primary-hover: #0052a3;
   --pao-color-primary-active: #004080;
   --pao-color-primary-text: #ffffff;
 
-  // Secondary variant colors
-  --pao-color-secondary: #e6e6e6;
   --pao-color-secondary-hover: #d1d1d1;
   --pao-color-secondary-active: #b8b8b8;
   --pao-color-secondary-text: #333333;
 
-  // Tertiary variant colors
-  --pao-color-tertiary: #f8f9fa;
-  --pao-color-tertiary-hover: #e9ecef;
-  --pao-color-tertiary-active: #dee2e6;
-  --pao-color-tertiary-text: #495057;
-
-  // Success variant colors
-  --pao-color-success: #28a745;
   --pao-color-success-hover: #218838;
   --pao-color-success-active: #1e7e34;
   --pao-color-success-text: #ffffff;
 
-  // Warning variant colors
-  --pao-color-warning: #ffc107;
   --pao-color-warning-hover: #e0a800;
   --pao-color-warning-active: #d39e00;
   --pao-color-warning-text: #212529;
 
-  // Danger variant colors
-  --pao-color-danger: #dc3545;
   --pao-color-danger-hover: #c82333;
   --pao-color-danger-active: #bd2130;
   --pao-color-danger-text: #ffffff;
 
-  // Border colors
+  // Additional border colors
   --pao-border-color-light: #d1d1d1;
   --pao-border-color-medium: #adb5bd;
   --pao-border-color-dark: #6c757d;
