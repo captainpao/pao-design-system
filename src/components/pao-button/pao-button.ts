@@ -2,8 +2,10 @@ import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './pao-button.styles';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger';
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'ghost' | 'outline';
 export type ButtonSize = 'sm' | 'md' | 'lg';
+
+export type ButtonAppearance = 'solid' | 'outline' | 'ghost';
 
 @customElement('pao-button')
 export class PaoButton extends LitElement {
@@ -17,6 +19,12 @@ export class PaoButton extends LitElement {
 
   @property({ type: Boolean })
   disabled = false;
+
+  @property({ type: Boolean })
+  loading = false;
+
+  @property({ type: String })
+  appearance: ButtonAppearance = 'solid';
 
   private handleClick(e: MouseEvent) {
     if (this.disabled) {
@@ -33,14 +41,29 @@ export class PaoButton extends LitElement {
   }
 
   render() {
+    const buttonClasses = [
+      'pao-button',
+      this.variant,
+      this.size,
+      this.appearance,
+      this.loading ? 'loading' : '',
+      this.disabled ? 'disabled' : ''
+    ].filter(Boolean).join(' ');
+
     return html`
       <button
         part="button"
-        class="pao-button ${this.variant} ${this.size}"
-        ?disabled=${this.disabled}
+        class=${buttonClasses}
+        ?disabled=${this.disabled || this.loading}
         @click=${this.handleClick}
+        aria-busy=${this.loading}
       >
-        <slot></slot>
+        ${this.loading ? html`
+          <span class="pao-button__spinner" part="spinner"></span>
+        ` : ''}
+        <span class="pao-button__content" part="content">
+          <slot></slot>
+        </span>
       </button>
     `;
   }

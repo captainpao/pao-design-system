@@ -40,32 +40,40 @@ A customizable button component for actions and user interactions.
 
 <!-- Different Variants -->
 <pao-button variant="secondary">Secondary Action</pao-button>
-<pao-button variant="ghost">Ghost Button</pao-button>
+<pao-button variant="success">Success Button</pao-button>
+<pao-button variant="warning">Warning Button</pao-button>
+<pao-button variant="danger">Danger Button</pao-button>
+
+<!-- Different Appearances -->
+<pao-button variant="primary" appearance="solid">Solid Primary</pao-button>
+<pao-button variant="primary" appearance="outline">Outline Primary</pao-button>
+<pao-button variant="primary" appearance="ghost">Ghost Primary</pao-button>
 
 <!-- Sizes -->
 <pao-button size="sm">Small Button</pao-button>
+<pao-button size="md">Medium Button</pao-button>
 <pao-button size="lg">Large Button</pao-button>
+
+<!-- Loading State -->
+<pao-button variant="primary" loading>Loading...</pao-button>
+
+<!-- Disabled State -->
+<pao-button variant="primary" disabled>Disabled Button</pao-button>
 
 <!-- Event Handling -->
 <pao-button @paoClick="handleClick">Click me</pao-button>
 ```
 
-```html
-<!-- Basic Usage -->
-<pao-button variant="primary">Click me</pao-button>
+## Properties
 
-<!-- Different Variants -->
-<pao-button variant="primary">Primary Button</pao-button>
-<pao-button variant="secondary">Secondary Button</pao-button>
-<pao-button variant="ghost">Ghost Button</pao-button>
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger'` | `'primary'` | Button color variant |
+| `appearance` | `'solid' \| 'outline' \| 'ghost'` | `'solid'` | Button appearance style |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Button size |
+| `loading` | `boolean` | `false` | Shows loading spinner |
+| `disabled` | `boolean` | `false` | Disables the button |
 
-<!-- Different Sizes -->
-<pao-button size="sm">Small Button</pao-button>
-<pao-button size="md">Medium Button</pao-button>
-<pao-button size="lg">Large Button</pao-button>
+## Events
 
-<!-- Event Handling -->
-<pao-button @paoClick="(e) => console.log('Button clicked', e.detail)">
-  Click me
-</pao-button>
-```
+- `paoClick`: Fired when button is clicked (returns original event in `event.detail.originalEvent`)
