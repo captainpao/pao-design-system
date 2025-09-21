@@ -27,7 +27,7 @@ export class PaoButton extends LitElement {
   appearance: ButtonAppearance = 'solid';
 
   private handleClick(e: MouseEvent) {
-    if (this.disabled) {
+    if (this.disabled || this.loading) {
       e.preventDefault();
       return;
     }
