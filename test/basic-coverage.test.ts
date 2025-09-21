@@ -1,3 +1,20 @@
+// Mock Lit dependencies for basic coverage testing
+jest.mock('lit', () => ({
+  LitElement: class {
+    static styles = [];
+  },
+  html: jest.fn(),
+}));
+
+jest.mock('lit/decorators.js', () => ({
+  customElement: jest.fn(),
+  property: jest.fn(),
+}));
+
+jest.mock('../src/components/pao-button/pao-button.styles', () => ({
+  styles: [],
+}));
+
 // Simple test to get basic coverage without complex ESM dependencies
 import { PaoButton } from '../src/components/pao-button/pao-button';
 

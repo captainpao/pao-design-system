@@ -10,11 +10,14 @@ export default {
       tsconfig: 'tsconfig.json',
       useESM: true,
     }],
+    '^.+\.(js|mjs)$': ['babel-jest', {
+      presets: [['@babel/preset-env', { targets: { node: 'current' } }]]
+    }],
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(lit|@open-wc)/)',
+    'node_modules/(?!(lit|@open-wc|@esm-bundle|chai|sinon|@web|@lit|chai-a11y-axe|axe-core|@axe-core)/)',
   ],
-  moduleFileExtensions: ['ts', 'js', 'json'],
+  moduleFileExtensions: ['ts', 'js', 'mjs', 'json'],
   extensionsToTreatAsEsm: ['.ts'],
   collectCoverage: true,
   coverageDirectory: 'coverage',

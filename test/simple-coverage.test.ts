@@ -73,7 +73,7 @@ describe('PaoButton basic coverage', () => {
     expect(mockEvent.preventDefault).toHaveBeenCalled();
   });
 
-  it('should NOT prevent click events when loading (current implementation)', () => {
+  it('should prevent click events when loading', () => {
     const button = new PaoButton();
     button.loading = true;
 
@@ -83,8 +83,8 @@ describe('PaoButton basic coverage', () => {
 
     button.handleClick(mockEvent as unknown as MouseEvent);
 
-    // Current implementation only checks disabled, not loading
-    expect(mockDispatch).toHaveBeenCalled();
-    expect(mockEvent.preventDefault).not.toHaveBeenCalled();
+    // Implementation checks both disabled and loading
+    expect(mockDispatch).not.toHaveBeenCalled();
+    expect(mockEvent.preventDefault).toHaveBeenCalled();
   });
 });

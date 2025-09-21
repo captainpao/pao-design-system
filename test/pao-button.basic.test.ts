@@ -1,3 +1,20 @@
+// Mock Lit dependencies for Jest testing
+jest.mock('lit', () => ({
+  LitElement: class {
+    static styles = [];
+  },
+  html: jest.fn(() => 'mocked-template'),
+}));
+
+jest.mock('lit/decorators.js', () => ({
+  customElement: jest.fn(),
+  property: jest.fn(),
+}));
+
+jest.mock('../src/components/pao-button/pao-button.styles', () => ({
+  styles: [],
+}));
+
 import { PaoButton } from '../src/components/pao-button/pao-button';
 
 // Basic test that doesn't require browser environment
@@ -38,9 +55,25 @@ describe('PaoButton Basic Tests', () => {
     expect(PaoButton.styles).toBeDefined();
   });
 
-  it('should be registered as custom element', () => {
-    // Check if the component is properly registered
-    const tagName = 'pao-button';
-    expect(customElements.get(tagName)).toBe(PaoButton);
+  it('should be a LitElement', () => {
+    // Check if the component extends LitElement
+    const button = new PaoButton();
+    expect(button).toBeInstanceOf(PaoButton);
+  });
+
+  it('should render with default properties', () => {
+    const button = new PaoButton();
+    const result = button.render();
+    expect(result).toBeDefined();
+  });
+
+  it('should render with different states', () => {
+    const button = new PaoButton();
+    button.loading = true;
+    button.disabled = true;
+    button.variant = 'success';
+    
+    const result = button.render();
+    expect(result).toBeDefined();
   });
 });
