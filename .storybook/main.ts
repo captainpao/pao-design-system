@@ -4,6 +4,7 @@ const config: StorybookConfig = {
   framework: '@storybook/web-components-vite',
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-essentials'],
+  staticDirs: ['../.storybook/public'],
   core: {
     disableTelemetry: true
   },
@@ -11,7 +12,7 @@ const config: StorybookConfig = {
     check: true
   },
   features: {
-    storyStoreV7: true
+    // storyStoreV7 is enabled by default in Storybook 8
   },
   async viteFinal(config) {
     return {

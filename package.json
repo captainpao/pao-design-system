@@ -39,17 +39,17 @@
     "@fortawesome/free-brands-svg-icons": "^7.0.0",
     "@fortawesome/free-regular-svg-icons": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-links": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
     "lit": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
     "@open-wc/testing": "^4.0.0",
-    "@storybook/addon-essentials": "^7.6.20",
-    "@storybook/addon-links": "^7.6.20",
-    "@storybook/blocks": "^7.6.20",
-    "@storybook/web-components": "^7.6.20",
-    "@storybook/web-components-vite": "^7.6.20",
+    "@storybook/web-components": "^8.6.14",
+    "@storybook/web-components-vite": "^8.6.14",
     "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
@@ -65,11 +65,11 @@
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
     "sass": "^1.69.5",
-    "storybook": "^7.6.20",
+    "storybook": "^8.6.14",
     "ts-jest": "^29.4.4",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10",
-    "vite-plugin-dts": "^3.7.0"
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4"
   },
   "lint-staged": {
     "*.ts": "eslint --fix",

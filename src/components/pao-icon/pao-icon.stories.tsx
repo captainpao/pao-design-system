@@ -5,7 +5,6 @@ import './pao-icon';
 const meta: Meta = {
   title: 'Components/Icon',
   component: 'pao-icon',
-  tags: ['autodocs'],
   argTypes: {
     name: {
       control: 'text',
