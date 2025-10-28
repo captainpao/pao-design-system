@@ -5,7 +5,7 @@ const theme = create({
   base: 'light',
   brandTitle: 'Pao Design System',
   brandUrl: './',
-  brandImage: undefined, // This removes the default Storybook logo
+  brandImage: '/pao.png', // This removes the default Storybook logo
 });
 
 addons.setConfig({
