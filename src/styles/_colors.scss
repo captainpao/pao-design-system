@@ -84,3 +84,87 @@
   --pao-color-disabled-text: #6c757d;
   --pao-color-disabled-border: #ced4da;
 }
+
+// Dark Theme
+[data-theme="dark"],
+.dark-theme {
+  // Dark Theme Utility Colors
+  --pao-body-bg: #121212;
+  --pao-body-color: #ffffff;
+  --pao-link-color: #4dabf7;
+  --pao-link-hover-color: #74c0fc;
+  --pao-border-color: #343a40;
+  --pao-code-color: #f783ac;
+  --pao-highlight-bg: #664d03;
+
+  // Dark Theme Surface Colors
+  --pao-surface-100: #1e1e1e;
+  --pao-surface-200: #2d2d2d;
+  --pao-surface-300: #3d3d3d;
+  --pao-surface-400: #4d4d4d;
+  --pao-surface-500: #5d5d5d;
+
+  // Dark Theme Semantic Colors
+  --pao-color-primary: #4dabf7;
+  --pao-color-primary-light: #1c7ed6;
+  --pao-color-primary-dark: #1864ab;
+
+  --pao-color-secondary: #868e96;
+  --pao-color-secondary-light: #5c636a;
+  --pao-color-secondary-dark: #495057;
+
+  --pao-color-success: #40c057;
+  --pao-color-success-light: #2f9e44;
+  --pao-color-success-dark: #2b8a3e;
+
+  --pao-color-info: #3bc9db;
+  --pao-color-info-light: #0ca678;
+  --pao-color-info-dark: #099268;
+
+  --pao-color-warning: #ffd43b;
+  --pao-color-warning-light: #f59f00;
+  --pao-color-warning-dark: #e67700;
+
+  --pao-color-danger: #fa5252;
+  --pao-color-danger-light: #e03131;
+  --pao-color-danger-dark: #c92a2a;
+
+  --pao-color-light: #343a40;
+  --pao-color-light-light: #495057;
+  --pao-color-light-dark: #212529;
+
+  --pao-color-dark: #f8f9fa;
+  --pao-color-dark-light: #e9ecef;
+  --pao-color-dark-dark: #dee2e6;
+
+  // Dark Theme Button Variants
+  --pao-color-primary-hover: #339af0;
+  --pao-color-primary-active: #1c7ed6;
+  --pao-color-primary-text: #ffffff;
+
+  --pao-color-secondary-hover: #6c757d;
+  --pao-color-secondary-active: #5c636a;
+  --pao-color-secondary-text: #f8f9fa;
+
+  --pao-color-success-hover: #37b24d;
+  --pao-color-success-active: #2f9e44;
+  --pao-color-success-text: #ffffff;
+
+  --pao-color-warning-hover: #fcc419;
+  --pao-color-warning-active: #f59f00;
+  --pao-color-warning-text: #212529;
+
+  --pao-color-danger-hover: #f03e3e;
+  --pao-color-danger-active: #e03131;
+  --pao-color-danger-text: #ffffff;
+
+  // Dark Theme Border Colors
+  --pao-border-color-light: #495057;
+  --pao-border-color-medium: #6c757d;
+  --pao-border-color-dark: #868e96;
+
+  // Dark Theme Disabled State
+  --pao-color-disabled-background: #343a40;
+  --pao-color-disabled-text: #868e96;
+  --pao-color-disabled-border: #495057;
+}
