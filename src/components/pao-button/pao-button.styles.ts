@@ -120,13 +120,13 @@ export const styles = css`
 
     /* Secondary */
     &.secondary {
-      background-color: var(--pao-color-secondary);
-      color: white;
+      background-color: white;
+      color: var(--pao-color-secondary);
       border-color: var(--pao-color-secondary);
 
       &:hover:not(:disabled):not(.loading) {
-        background-color: var(--pao-color-secondary-dark);
-        border-color: var(--pao-color-secondary-dark);
+        background-color: var(--pao-color-secondary-light);
+        border-color: var(--pao-color-secondary);
       }
     }
 

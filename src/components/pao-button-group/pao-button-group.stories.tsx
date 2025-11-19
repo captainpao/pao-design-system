@@ -8,7 +8,7 @@ import '../pao-button/pao-button';
 interface ButtonGroupStoryArgs {
   buttons: ButtonProps[];
   className?: string;
-  roundedCorners: boolean;
+  pillShape: boolean;
   variant: ButtonGroupVariant;
   size: ButtonSize;
   selectionType: SelectionType;
@@ -25,7 +25,7 @@ const meta = {
       { label: 'Option 2' },
       { label: 'Option 3' },
     ],
-    roundedCorners: false,
+    pillShape: false,
     variant: 'primary',
     size: 'md',
     selectionType: 'single',
@@ -57,9 +57,9 @@ const meta = {
         defaultValue: { summary: 'undefined' },
       },
     },
-    roundedCorners: {
+    pillShape: {
       control: 'boolean',
-      description: 'Whether to apply rounded corners to the first/last button.',
+      description: 'Whether to apply pill shape (rounded corners) to the group.',
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
@@ -113,15 +113,15 @@ const meta = {
     <pao-button-group
       .buttons=${args.buttons}
       .className=${args.className}
-      .roundedCorners=${args.roundedCorners}
-      .variant=${args.variant}
-      .size=${args.size}
-      .selectionType=${args.selectionType}
+      ?pillShape=${args.pillShape}
+      variant=${args.variant}
+      size=${args.size}
+      selectionType=${args.selectionType}
       .active=${args.active}
       .defaultActive=${args.defaultActive}
       @pao-selection-change=${(e: CustomEvent) => {
-        console.log('Selection changed:', e.detail);
-      }}
+      console.log('Selection changed:', e.detail);
+    }}
     ></pao-button-group>
   `,
 } as Meta<ButtonGroupStoryArgs>;
@@ -168,16 +168,16 @@ export const Multiple: Story = {
   },
 };
 
-export const Rounded: Story = {
+export const Pill: Story = {
   args: {
-    roundedCorners: true,
+    pillShape: true,
     variant: 'primary',
     defaultActive: [1],
   },
   parameters: {
     docs: {
       description: {
-        story: 'Button group with rounded corners on the first and last buttons.',
+        story: 'Button group with pill shape (fully rounded corners).',
       },
     },
   },

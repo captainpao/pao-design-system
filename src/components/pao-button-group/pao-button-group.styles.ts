@@ -11,6 +11,11 @@ export const styles = css`
     border: 1px solid #d1d1d1;
     border-radius: 4px;
     overflow: hidden;
+    transition: border-radius 0.2s ease;
+  }
+
+  .pao-button-group.pill {
+    border-radius: 20px;
   }
 
   .pao-button-group .group-button {
@@ -45,15 +50,15 @@ export const styles = css`
   }
 
   /* Rounded corners option - larger radius */
-  .pao-button-group.rounded .group-button.first:not(.last) {
+  .pao-button-group.pill .group-button.first:not(.last) {
     --pao-button-border-radius: 20px 0 0 20px;
   }
 
-  .pao-button-group.rounded .group-button.last:not(.first) {
+  .pao-button-group.pill .group-button.last:not(.first) {
     --pao-button-border-radius: 0 20px 20px 0;
   }
 
-  .pao-button-group.rounded .group-button.first.last {
+  .pao-button-group.pill .group-button.first.last {
     --pao-button-border-radius: 20px;
   }
 

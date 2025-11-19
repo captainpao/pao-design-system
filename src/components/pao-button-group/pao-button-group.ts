@@ -23,22 +23,22 @@ export class PaoButtonGroup extends LitElement {
   @property({ type: String })
   className = '';
 
-  @property({ type: Boolean })
-  roundedCorners = false;
+  @property({ type: Boolean, reflect: true })
+  pillShape = false;
 
-  @property({ type: String })
+  @property({ type: String, reflect: true })
   variant: ButtonGroupVariant = 'primary';
 
-  @property({ type: String })
+  @property({ type: String, reflect: true })
   size: ButtonSize = 'md';
 
-  @property({ type: String })
+  @property({ type: String, reflect: true })
   selectionType: SelectionType = 'single';
 
-  @property({ type: Array })
+  @property({ type: Array, reflect: true })
   active: number[] = [];
 
-  @property({ type: Array })
+  @property({ type: Array, reflect: true })
   defaultActive: number[] = [];
 
   @state()
@@ -74,17 +74,17 @@ export class PaoButtonGroup extends LitElement {
     // For button groups, we'll use the group's variant
     // Active buttons will use primary variant for emphasis, unless the group is already primary
     const isActive = this.currentActive.includes(index);
-    
+
     if (isActive && this.variant !== 'primary') {
       return 'primary';
     }
-    
+
     return this.variant;
   }
 
   private handleButtonClick(index: number) {
     const currentActive = [...this.currentActive];
-    
+
     if (this.selectionType === 'single') {
       const newActive = currentActive.includes(index) ? [] : [index];
       this.updateActive(newActive);
@@ -112,7 +112,7 @@ export class PaoButtonGroup extends LitElement {
     if (!this._isControlled) {
       this._internalActive = newActive;
     }
-    
+
     this.dispatchEvent(new CustomEvent('pao-active-change', {
       bubbles: true,
       composed: true,
@@ -123,14 +123,14 @@ export class PaoButtonGroup extends LitElement {
   render() {
     return html`
       <div 
-        class="pao-button-group ${this.className} ${this.roundedCorners ? 'rounded' : ''}"
+        class="pao-button-group ${this.className} ${this.pillShape ? 'pill' : ''}"
         role="group"
       >
         ${this.buttons.map((buttonProps, index) => {
-          const isActive = this.currentActive.includes(index);
-          const variant = this.getButtonVariant(buttonProps, index);
-          
-          return html`
+      const isActive = this.currentActive.includes(index);
+      const variant = this.getButtonVariant(buttonProps, index);
+
+      return html`
             <pao-button
               class="group-button ${isActive ? 'active' : ''} ${index === 0 ? 'first' : ''} ${index === this.buttons.length - 1 ? 'last' : ''}"
               variant=${variant}
@@ -141,7 +141,7 @@ export class PaoButtonGroup extends LitElement {
               ${buttonProps.label}
             </pao-button>
           `;
-        })}
+    })}
       </div>
     `;
   }
