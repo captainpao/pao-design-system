@@ -92,10 +92,6 @@ export const styles = css`
     border-left: 1px solid #d1d1d1;
   }
 
-  /* Active state styling */
-  .pao-button-group .group-button.active {
-    --pao-button-background: #0066cc;
-    --pao-button-color: white;
-  }
+
 
 `;

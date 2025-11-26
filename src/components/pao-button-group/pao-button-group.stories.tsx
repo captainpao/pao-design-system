@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import { ButtonGroupVariant, SelectionType, ButtonProps } from './pao-button-group';
+import { SelectionType, ButtonProps } from './pao-button-group';
 import { ButtonSize } from '../pao-button/pao-button';
 import './pao-button-group';
 import '../pao-button/pao-button';
@@ -9,7 +9,7 @@ interface ButtonGroupStoryArgs {
   buttons: ButtonProps[];
   className?: string;
   pillShape: boolean;
-  variant: ButtonGroupVariant;
+
   size: ButtonSize;
   selectionType: SelectionType;
   active: number[];
@@ -26,7 +26,6 @@ const meta = {
       { label: 'Option 3' },
     ],
     pillShape: false,
-    variant: 'primary',
     size: 'md',
     selectionType: 'single',
     active: [],
@@ -65,15 +64,7 @@ const meta = {
         defaultValue: { summary: 'false' },
       },
     },
-    variant: {
-      control: { type: 'select' },
-      options: ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger'],
-      description: 'The variant for all buttons in the group.',
-      table: {
-        type: { summary: 'ButtonGroupVariant' },
-        defaultValue: { summary: 'primary' },
-      },
-    },
+
     size: {
       control: { type: 'select' },
       options: ['lg', 'md', 'sm'],
@@ -114,7 +105,6 @@ const meta = {
       .buttons=${args.buttons}
       .className=${args.className}
       ?pillShape=${args.pillShape}
-      variant=${args.variant}
       size=${args.size}
       selectionType=${args.selectionType}
       .active=${args.active}
@@ -136,7 +126,6 @@ export const Primary: Story = {
       { label: 'Option 2' },
       { label: 'Option 3' },
     ],
-    variant: 'secondary',
     defaultActive: [0],
   },
   parameters: {
@@ -156,7 +145,6 @@ export const Multiple: Story = {
       { label: 'Underline' },
     ],
     selectionType: 'multiple',
-    variant: 'secondary',
     defaultActive: [0, 2],
   },
   parameters: {
@@ -171,7 +159,6 @@ export const Multiple: Story = {
 export const Pill: Story = {
   args: {
     pillShape: true,
-    variant: 'primary',
     defaultActive: [1],
   },
   parameters: {
@@ -211,19 +198,7 @@ export const Large: Story = {
   },
 };
 
-export const Tertiary: Story = {
-  args: {
-    variant: 'tertiary',
-    defaultActive: [1],
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Button group with tertiary variant buttons.',
-      },
-    },
-  },
-};
+
 
 export const WithDisabled: Story = {
   args: {
@@ -250,7 +225,6 @@ export const Mixed: Story = {
       { label: 'Warning', variant: 'warning' },
       { label: 'Danger', variant: 'danger' },
     ],
-    variant: 'primary',
   },
   parameters: {
     docs: {
@@ -263,11 +237,10 @@ export const Mixed: Story = {
 
 export const Success: Story = {
   args: {
-    variant: 'success',
     buttons: [
-      { label: 'Save' },
-      { label: 'Submit' },
-      { label: 'Confirm' },
+      { label: 'Save', variant: 'success' },
+      { label: 'Submit', variant: 'success' },
+      { label: 'Confirm', variant: 'success' },
     ],
     defaultActive: [0],
   },
@@ -282,11 +255,10 @@ export const Success: Story = {
 
 export const Warning: Story = {
   args: {
-    variant: 'warning',
     buttons: [
-      { label: 'Caution' },
-      { label: 'Review' },
-      { label: 'Alert' },
+      { label: 'Caution', variant: 'warning' },
+      { label: 'Review', variant: 'warning' },
+      { label: 'Alert', variant: 'warning' },
     ],
     defaultActive: [1],
   },
@@ -301,79 +273,16 @@ export const Warning: Story = {
 
 export const Danger: Story = {
   args: {
-    variant: 'danger',
     buttons: [
-      { label: 'Delete' },
-      { label: 'Remove' },
-      { label: 'Clear' },
+      { label: 'Delete', variant: 'danger' },
+      { label: 'Remove', variant: 'danger' },
+      { label: 'Clear', variant: 'danger' },
     ],
   },
   parameters: {
     docs: {
       description: {
         story: 'Danger variant button group for destructive actions.',
-      },
-    },
-  },
-};
-
-export const AllVariants: Story = {
-  render: () => html`
-    <div style="display: flex; flex-direction: column; gap: 2rem;">
-      <div>
-        <h3>Primary Variant</h3>
-        <pao-button-group
-          .buttons=${[{ label: 'Option 1' }, { label: 'Option 2' }, { label: 'Option 3' }]}
-          variant="primary"
-          .defaultActive=${[0]}
-        ></pao-button-group>
-      </div>
-      <div>
-        <h3>Secondary Variant</h3>
-        <pao-button-group
-          .buttons=${[{ label: 'Option 1' }, { label: 'Option 2' }, { label: 'Option 3' }]}
-          variant="secondary"
-          .defaultActive=${[1]}
-        ></pao-button-group>
-      </div>
-      <div>
-        <h3>Tertiary Variant</h3>
-        <pao-button-group
-          .buttons=${[{ label: 'Option 1' }, { label: 'Option 2' }, { label: 'Option 3' }]}
-          variant="tertiary"
-          .defaultActive=${[2]}
-        ></pao-button-group>
-      </div>
-      <div>
-        <h3>Success Variant</h3>
-        <pao-button-group
-          .buttons=${[{ label: 'Save' }, { label: 'Submit' }, { label: 'Confirm' }]}
-          variant="success"
-          .defaultActive=${[0]}
-        ></pao-button-group>
-      </div>
-      <div>
-        <h3>Warning Variant</h3>
-        <pao-button-group
-          .buttons=${[{ label: 'Caution' }, { label: 'Review' }, { label: 'Alert' }]}
-          variant="warning"
-          .defaultActive=${[1]}
-        ></pao-button-group>
-      </div>
-      <div>
-        <h3>Danger Variant</h3>
-        <pao-button-group
-          .buttons=${[{ label: 'Delete' }, { label: 'Remove' }, { label: 'Clear' }]}
-          variant="danger"
-          .defaultActive=${[2]}
-        ></pao-button-group>
-      </div>
-    </div>
-  `,
-  parameters: {
-    docs: {
-      description: {
-        story: 'Showcase of all button group variants.',
       },
     },
   },

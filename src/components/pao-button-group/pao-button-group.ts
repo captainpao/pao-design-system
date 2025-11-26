@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js';
 import { styles } from './pao-button-group.styles';
 import { ButtonVariant, ButtonSize } from '../pao-button/pao-button';
 
-export type ButtonGroupVariant = ButtonVariant;
+
 export type SelectionType = 'single' | 'multiple';
 
 export interface ButtonProps {
@@ -25,9 +25,6 @@ export class PaoButtonGroup extends LitElement {
 
   @property({ type: Boolean, reflect: true })
   pillShape = false;
-
-  @property({ type: String, reflect: true })
-  variant: ButtonGroupVariant = 'primary';
 
   @property({ type: String, reflect: true })
   size: ButtonSize = 'md';
@@ -71,15 +68,9 @@ export class PaoButtonGroup extends LitElement {
       return buttonProps.variant;
     }
 
-    // For button groups, we'll use the group's variant
-    // Active buttons will use primary variant for emphasis, unless the group is already primary
+    // Active buttons use primary variant, inactive use secondary
     const isActive = this.currentActive.includes(index);
-
-    if (isActive && this.variant !== 'primary') {
-      return 'primary';
-    }
-
-    return this.variant;
+    return isActive ? 'primary' : 'secondary';
   }
 
   private handleButtonClick(index: number) {
