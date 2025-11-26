@@ -23,6 +23,9 @@ export class PaoButton extends LitElement {
   @property({ type: Boolean })
   loading = false;
 
+  @property({ type: Boolean, reflect: true })
+  pillShape = false;
+
   @property({ type: String })
   appearance: ButtonAppearance = 'solid';
 
@@ -47,7 +50,8 @@ export class PaoButton extends LitElement {
       this.size,
       this.appearance,
       this.loading ? 'loading' : '',
-      this.disabled ? 'disabled' : ''
+      this.disabled ? 'disabled' : '',
+      this.pillShape ? 'pill' : ''
     ].filter(Boolean).join(' ');
 
     return html`

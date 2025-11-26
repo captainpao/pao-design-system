@@ -27,6 +27,10 @@ export const styles = css`
     box-shadow: var(--pao-button-shadow, none);
   }
 
+  .pao-button.pill {
+    --pao-button-border-radius: 50px;
+  }
+
   .pao-button:hover:not(:disabled):not(.loading) {
     transform: translateY(-1px);
     box-shadow: var(--pao-button-shadow-hover, 0 4px 12px rgba(0, 0, 0, 0.15));

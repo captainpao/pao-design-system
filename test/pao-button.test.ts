@@ -200,10 +200,26 @@ describe('PaoButton', () => {
     expect(el.disabled).toBe(true);
   });
 
+  it('handles pillShape property correctly', () => {
+    const el = new PaoButton();
+    expect(el.pillShape).toBe(false);
+
+    el.pillShape = true;
+    expect(el.pillShape).toBe(true);
+  });
+
+  it('renders with pill class when pillShape is true', () => {
+    const el = new PaoButton();
+    el.pillShape = true;
+    const result = el.render();
+
+    expect(result).toBeDefined();
+  });
+
   it('renders with correct button classes', () => {
     const el = new PaoButton();
     const result = el.render();
-    
+
     // The render method should return a template result
     expect(result).toBeDefined();
   });
@@ -212,7 +228,7 @@ describe('PaoButton', () => {
     const el = new PaoButton();
     el.loading = true;
     const result = el.render();
-    
+
     expect(result).toBeDefined();
   });
 
@@ -220,7 +236,7 @@ describe('PaoButton', () => {
     const el = new PaoButton();
     el.disabled = true;
     const result = el.render();
-    
+
     expect(result).toBeDefined();
   });
 
@@ -230,7 +246,7 @@ describe('PaoButton', () => {
     el.size = 'lg';
     el.appearance = 'outline';
     const result = el.render();
-    
+
     expect(result).toBeDefined();
   });
 
@@ -239,7 +255,7 @@ describe('PaoButton', () => {
     el.loading = true;
     el.disabled = true;
     const result = el.render();
-    
+
     expect(result).toBeDefined();
   });
 });

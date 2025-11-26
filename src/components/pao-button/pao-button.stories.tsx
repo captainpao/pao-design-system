@@ -7,6 +7,7 @@ interface ButtonStoryArgs {
   variant: ButtonVariant;
   size: ButtonSize;
   disabled: boolean;
+  pillShape: boolean;
   slot: string;
 }
 
@@ -17,6 +18,7 @@ const meta = {
     variant: 'primary',
     size: 'md',
     disabled: false,
+    pillShape: false,
     slot: 'Button',
   },
   parameters: {
@@ -45,7 +47,7 @@ const meta = {
         defaultValue: { summary: 'md' },
       },
     },
-    disabled: { 
+    disabled: {
       control: 'boolean',
       description: 'Whether the button is disabled.',
       table: {
@@ -53,7 +55,15 @@ const meta = {
         defaultValue: { summary: false },
       },
     },
-    slot: { 
+    pillShape: {
+      control: 'boolean',
+      description: 'Whether the button has a pill shape.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    slot: {
       control: 'text',
       description: 'The text content of the button.',
       table: {
@@ -66,6 +76,7 @@ const meta = {
       variant=${args.variant}
       size=${args.size}
       ?disabled=${args.disabled}
+      ?pillShape=${args.pillShape}
     >${args.slot}</pao-button>
   `,
 } as Meta<ButtonStoryArgs>;
