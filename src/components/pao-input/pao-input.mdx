@@ -1,0 +1,37 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as InputStories from './pao-input.stories';
+
+<Meta of={InputStories} />
+
+# Input
+
+A text input component with label, validation states, and size variants.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Properties
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `type` | `'text' \| 'password' \| 'email' \| 'number' \| 'search' \| 'tel' \| 'url'` | `'text'` | Input type |
+| `value` | `string` | `''` | Current value |
+| `placeholder` | `string` | `''` | Placeholder text |
+| `label` | `string` | `''` | Label text displayed above the input |
+| `name` | `string` | `''` | Input name attribute |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Input size |
+| `error` | `string` | `''` | Error message — shown in red below the input |
+| `helperText` | `string` | `''` | Helper text — shown below the input when no error |
+| `disabled` | `boolean` | `false` | Disables the input |
+| `readonly` | `boolean` | `false` | Makes the input read-only |
+| `required` | `boolean` | `false` | Marks the input as required (adds * to label) |
+
+## Events
+
+- `paoInput`: Fired on every keystroke. `event.detail = { value: string, originalEvent: InputEvent }`
+- `paoChange`: Fired when the value is committed (on blur/enter). `event.detail = { value: string, originalEvent: Event }`

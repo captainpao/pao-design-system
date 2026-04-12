@@ -1,0 +1,25 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as BadgeStories from './pao-badge.stories';
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+A compact label component for displaying status, counts, or categories.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Properties
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'primary'` | Badge color variant |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Badge size |
+| `pill` | `boolean` | `false` | Fully rounded pill shape |
+| `outline` | `boolean` | `false` | Light background with colored border and text |
