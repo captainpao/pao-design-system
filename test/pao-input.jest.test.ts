@@ -113,13 +113,39 @@ describe('PaoInput', () => {
     expect(handler).toHaveBeenCalled();
   });
 
-  it('does not emit events when disabled', () => {
+  it('does not emit paoInput when disabled', () => {
     element.disabled = true;
     const handler = jest.fn();
     element.addEventListener('paoInput', handler);
     const fakeEvent = { target: { value: 'hi' } } as unknown as InputEvent;
     (element as any).handleInput(fakeEvent);
     expect(handler).not.toHaveBeenCalled();
+  });
+
+  it('does not emit paoChange when disabled', () => {
+    element.disabled = true;
+    const handler = jest.fn();
+    element.addEventListener('paoChange', handler);
+    const fakeEvent = { target: { value: 'hi' } } as unknown as Event;
+    (element as any).handleChange(fakeEvent);
+    expect(handler).not.toHaveBeenCalled();
+  });
+
+  it('renders without label', () => {
+    element.label = '';
+    expect(element.render()).toBeDefined();
+  });
+
+  it('renders with label and required mark', () => {
+    element.label = 'Email';
+    element.required = true;
+    expect(element.render()).toBeDefined();
+  });
+
+  it('renders with label but not required', () => {
+    element.label = 'Email';
+    element.required = false;
+    expect(element.render()).toBeDefined();
   });
 
   it('has static styles', () => {
