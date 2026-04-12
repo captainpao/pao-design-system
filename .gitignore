@@ -5,6 +5,7 @@ node_modules/
 # Build output
 dist/
 storybook-static/
+coverage/
 
 # Editor and OS files
 .DS_Store
