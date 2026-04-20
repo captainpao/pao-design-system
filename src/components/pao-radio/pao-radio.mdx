@@ -1,0 +1,33 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as RadioStories from './pao-radio.stories';
+
+<Meta of={RadioStories} />
+
+# Radio
+
+A form control for single-selection from a set of options.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Properties
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` | `string` | `''` | Value submitted with forms |
+| `name` | `string` | `''` | Input name — set automatically by `pao-radio-group` |
+| `checked` | `boolean` | `false` | Whether the radio is selected |
+| `disabled` | `boolean` | `false` | Disables interaction |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Control size |
+| `label` | `string` | `''` | Label text displayed beside the radio |
+| `error` | `string` | `''` | Error message shown in red below the control |
+| `helperText` | `string` | `''` | Helper text shown below the control when no error |
+
+## Events
+
+- `paoChange`: Fired on change. `event.detail = { value: string, checked: boolean }`
