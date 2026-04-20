@@ -1,0 +1,31 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as CheckboxGroupStories from './pao-checkbox-group.stories';
+
+<Meta of={CheckboxGroupStories} />
+
+# Checkbox Group
+
+A fieldset wrapper that coordinates a set of `pao-checkbox` elements.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Properties
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `name` | `string` | `''` | Propagated to all child checkboxes as their `name` attribute |
+| `label` | `string` | `''` | Group label rendered as a `<legend>` |
+| `disabled` | `boolean` | `false` | Disables all child checkboxes |
+| `error` | `string` | `''` | Error message shown below the group |
+| `helperText` | `string` | `''` | Helper text shown below the group when no error |
+| `orientation` | `'vertical' \| 'horizontal'` | `'vertical'` | Layout direction of the checkboxes |
+
+## Events
+
+- `paoChange`: Fired when any child checkbox changes. `event.detail = { values: string[] }` — array of all currently checked values.
