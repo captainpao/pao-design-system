@@ -18,8 +18,8 @@ export class PaoCheckboxGroup extends LitElement {
   private handleSlotChange() {
     const children = this.querySelectorAll('pao-checkbox');
     children.forEach(child => {
-      if (this.name) (child as any).name = this.name;
-      if (this.disabled) (child as any).disabled = true;
+      (child as any).name = this.name;
+      (child as any).disabled = this.disabled;
     });
   }
 
