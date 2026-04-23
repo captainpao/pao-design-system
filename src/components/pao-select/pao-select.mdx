@@ -1,0 +1,55 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as SelectStories from './pao-select.stories';
+
+<Meta of={SelectStories} />
+
+# Select
+
+A custom dropdown for single or multi-option selection. Styled to match `pao-input`, with keyboard navigation and click-outside support.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## API
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` | `string` | `''` | Selected value (single-select mode) |
+| `values` | `string[]` | `[]` | Selected values (multi-select mode) |
+| `name` | `string` | `''` | Input name for form submission |
+| `label` | `string` | `''` | Label displayed above the trigger |
+| `placeholder` | `string` | `'Select...'` | Placeholder shown when nothing is selected |
+| `multiple` | `boolean` | `false` | Enables multi-select mode |
+| `disabled` | `boolean` | `false` | Disables the select |
+| `required` | `boolean` | `false` | Marks as required (adds * to label) |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Trigger size |
+| `error` | `string` | `''` | Error message shown below the trigger |
+| `helperText` | `string` | `''` | Helper text shown below the trigger when no error |
+
+## Events
+
+- `paoChange`: Fired on selection. `event.detail = { value: string, values: string[] }` — both always present.
+
+## pao-select-option
+
+Options are slotted `<pao-select-option>` elements.
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` | `string` | `''` | The value emitted on selection |
+| `disabled` | `boolean` | `false` | Prevents this option from being selected |
+| `selected` | `boolean` | `false` | Set automatically by `pao-select` — do not set manually |
+
+## Keyboard Navigation
+
+| Key | Action |
+|-----|--------|
+| `ArrowDown` | Move focus to next option |
+| `ArrowUp` | Move focus to previous option |
+| `Enter` / `Space` | Select focused option |
+| `Escape` | Close dropdown |
