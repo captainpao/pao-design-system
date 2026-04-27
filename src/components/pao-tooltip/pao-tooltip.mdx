@@ -1,0 +1,30 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as TooltipStories from './pao-tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+A small pop-up that provides additional information when a user hovers over or focuses on an element. Supports four positioning directions and an optional show delay.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Events
+
+- `paoShow`: Fired when the tooltip becomes visible.
+- `paoHide`: Fired when the tooltip is hidden.
+
+## Methods
+
+- `show()`: Displays the tooltip (respects `delay` and `disabled`).
+- `hide()`: Hides the tooltip (respects `disabled`).
+
+## Usage
+
+Wrap any element with `<pao-tooltip content="Your text">` and the tooltip will appear on hover and focus. Set `position` to control direction and `delay` (ms) for a pause before showing. Use `disabled` to suppress the tooltip programmatically.

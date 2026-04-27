@@ -1,0 +1,30 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as ModalStories from './pao-modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+A dialog overlay that displays content on top of the page. Supports multiple sizes, dismissible backdrop and escape key behavior, and slotted content.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Events
+
+- `paoOpen`: Fired when the modal is opened via `showModal()`.
+- `paoClose`: Fired when the modal is closed. `event.detail = { source: 'escape' | 'backdrop' | 'close-button' }`
+
+## Methods
+
+- `showModal()`: Opens the modal and dispatches `paoOpen`.
+- `close()`: Closes the modal and dispatches `paoClose`.
+
+## Usage
+
+The modal uses a slot for its body content. Control visibility with the `open` property or the `showModal()`/`close()` methods. By default, pressing Escape or clicking the backdrop dismisses the modal — set `dismissible="false"` to disable this.

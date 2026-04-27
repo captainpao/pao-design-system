@@ -15,3 +15,5 @@ export * from './components/pao-select/pao-select';
 export * from './components/pao-toggle/pao-toggle';
 export * from './components/pao-textarea/pao-textarea';
 export * from './components/pao-toast/pao-toast';
+export * from './components/pao-modal/pao-modal';
+export * from './components/pao-tooltip/pao-tooltip';
