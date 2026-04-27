@@ -89,8 +89,40 @@ describe('PaoRadioGroup', () => {
     );
   });
 
-  it('render returns defined result', () => {
+  it('render returns defined result with defaults', () => {
     const el = new PaoRadioGroup();
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with label', () => {
+    const el = new PaoRadioGroup();
+    el.label = 'Choose a plan';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with required', () => {
+    const el = new PaoRadioGroup();
+    el.label = 'Required group';
+    el.required = true;
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with error', () => {
+    const el = new PaoRadioGroup();
+    el.error = 'Please select a plan';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with helperText (no error)', () => {
+    const el = new PaoRadioGroup();
+    el.helperText = 'Select your billing preference';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with helperText suppressed by error', () => {
+    const el = new PaoRadioGroup();
+    el.error = 'Error shown';
+    el.helperText = 'Helper hidden';
     expect(el.render()).toBeDefined();
   });
 });

@@ -83,8 +83,33 @@ describe('PaoCheckboxGroup', () => {
     );
   });
 
-  it('render returns defined result', () => {
+  it('render returns defined result with defaults', () => {
     const el = new PaoCheckboxGroup();
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with label', () => {
+    const el = new PaoCheckboxGroup();
+    el.label = 'Preferences';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with error', () => {
+    const el = new PaoCheckboxGroup();
+    el.error = 'Select at least one option';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with helperText (no error)', () => {
+    const el = new PaoCheckboxGroup();
+    el.helperText = 'You may select multiple';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with helperText suppressed by error', () => {
+    const el = new PaoCheckboxGroup();
+    el.error = 'Error takes precedence';
+    el.helperText = 'Hidden helper';
     expect(el.render()).toBeDefined();
   });
 });

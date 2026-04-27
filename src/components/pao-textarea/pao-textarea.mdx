@@ -1,0 +1,21 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as TextareaStories from './pao-textarea.stories';
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+A multi-line text input control. Use for longer free-form content like descriptions, comments, or notes.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Events
+
+- `paoInput`: Fired on every keystroke. `event.detail = { value: string, originalEvent: InputEvent }`
+- `paoChange`: Fired on blur/commit. `event.detail = { value: string, originalEvent: Event }`

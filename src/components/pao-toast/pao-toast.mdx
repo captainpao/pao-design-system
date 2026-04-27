@@ -1,0 +1,24 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as ToastStories from './pao-toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+A brief notification that appears to provide feedback or status. Supports multiple severity variants and optional auto-dismiss.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Events
+
+- `paoDismiss`: Fired when the toast is dismissed. `event.detail = { variant: string }`
+
+## Usage
+
+Control visibility with the `open` property. For floating toasts, position the host element with CSS (`position: fixed`, etc.).

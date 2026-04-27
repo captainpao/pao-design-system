@@ -51,8 +51,27 @@ describe('PaoSelectOption', () => {
     expect(el.dispatchEvent).not.toHaveBeenCalled();
   });
 
-  it('render returns defined result', () => {
+  it('render returns defined result with defaults', () => {
     const el = new PaoSelectOption();
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result when selected', () => {
+    const el = new PaoSelectOption();
+    el.selected = true;
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result when disabled', () => {
+    const el = new PaoSelectOption();
+    el.disabled = true;
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result when selected and disabled', () => {
+    const el = new PaoSelectOption();
+    el.selected = true;
+    el.disabled = true;
     expect(el.render()).toBeDefined();
   });
 });

@@ -14,3 +14,8 @@ A component that groups multiple buttons together with various selection modes a
 ## Properties
 
 <Controls />
+
+## Events
+
+- `pao-selection-change`: Fired on every button click. `event.detail = { active: number[], clickedIndex: number }`
+- `pao-active-change`: Fired when the active selection updates. `event.detail = { active: number[] }`

@@ -15,21 +15,6 @@ A form control for boolean or indeterminate selections.
 
 <Controls />
 
-## Properties
-
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| `value` | `string` | `''` | Value submitted with forms |
-| `name` | `string` | `''` | Input name — set automatically by `pao-checkbox-group` |
-| `checked` | `boolean` | `false` | Whether the checkbox is checked |
-| `indeterminate` | `boolean` | `false` | Indeterminate state (dash) — typically used for "select all" |
-| `disabled` | `boolean` | `false` | Disables interaction |
-| `required` | `boolean` | `false` | Marks as required |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Control size |
-| `label` | `string` | `''` | Label text displayed beside the checkbox |
-| `error` | `string` | `''` | Error message shown in red below the control |
-| `helperText` | `string` | `''` | Helper text shown below the control when no error |
-
 ## Events
 
 - `paoChange`: Fired on change. `event.detail = { value: string, checked: boolean, indeterminate: boolean }`

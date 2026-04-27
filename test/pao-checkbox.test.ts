@@ -85,8 +85,71 @@ describe('PaoCheckbox', () => {
     expect(el.dispatchEvent).not.toHaveBeenCalled();
   });
 
-  it('render returns defined result', () => {
+  it('updated sets indeterminate on the input when changed', () => {
     const el = new PaoCheckbox();
+    const fakeInput = { indeterminate: false };
+    el.shadowRoot = { querySelector: jest.fn(() => fakeInput) } as any;
+    el.indeterminate = true;
+
+    const changed = new Map<string, unknown>([['indeterminate', false]]);
+    (el as any).updated(changed);
+
+    expect(fakeInput.indeterminate).toBe(true);
+  });
+
+  it('updated does nothing when indeterminate is not in changed map', () => {
+    const el = new PaoCheckbox();
+    const querySpy = jest.fn();
+    el.shadowRoot = { querySelector: querySpy } as any;
+
+    const changed = new Map<string, unknown>([['checked', false]]);
+    (el as any).updated(changed);
+
+    expect(querySpy).not.toHaveBeenCalled();
+  });
+
+  it('updated handles missing input element gracefully', () => {
+    const el = new PaoCheckbox();
+    el.shadowRoot = { querySelector: jest.fn(() => null) } as any;
+    el.indeterminate = true;
+
+    const changed = new Map<string, unknown>([['indeterminate', false]]);
+    expect(() => (el as any).updated(changed)).not.toThrow();
+  });
+
+  it('render returns defined result with defaults', () => {
+    const el = new PaoCheckbox();
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result when disabled', () => {
+    const el = new PaoCheckbox();
+    el.disabled = true;
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with label', () => {
+    const el = new PaoCheckbox();
+    el.label = 'Accept terms';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with error', () => {
+    const el = new PaoCheckbox();
+    el.error = 'This field is required';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with helperText (no error)', () => {
+    const el = new PaoCheckbox();
+    el.helperText = 'Optional helper';
+    expect(el.render()).toBeDefined();
+  });
+
+  it('render returns defined result with helperText suppressed by error', () => {
+    const el = new PaoCheckbox();
+    el.error = 'Error takes precedence';
+    el.helperText = 'Helper is hidden';
     expect(el.render()).toBeDefined();
   });
 });

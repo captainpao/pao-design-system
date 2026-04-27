@@ -15,19 +15,6 @@ A fieldset wrapper that coordinates a set of `pao-radio` elements.
 
 <Controls />
 
-## Properties
-
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| `name` | `string` | `''` | Propagated to all child radios as their `name` attribute |
-| `label` | `string` | `''` | Group label rendered as a `<legend>` |
-| `value` | `string` | `''` | Currently selected radio value |
-| `disabled` | `boolean` | `false` | Disables all child radios |
-| `required` | `boolean` | `false` | Marks the group as required |
-| `error` | `string` | `''` | Error message shown below the group |
-| `helperText` | `string` | `''` | Helper text shown below the group when no error |
-| `orientation` | `'vertical' \| 'horizontal'` | `'vertical'` | Layout direction of the radios |
-
 ## Events
 
 - `paoChange`: Fired when a child radio is selected. `event.detail = { value: string }`

@@ -14,20 +14,21 @@ jest.mock('lit/decorators.js', () => ({
   property: jest.fn(),
 }));
 
-jest.mock('../src/components/pao-radio/pao-radio.styles', () => ({
+jest.mock('../src/components/pao-toggle/pao-toggle.styles', () => ({
   styles: [],
 }));
 
-import { PaoRadio } from '../src/components/pao-radio/pao-radio';
-import type { RadioSize } from '../src/components/pao-radio/pao-radio';
+import { PaoToggle } from '../src/components/pao-toggle/pao-toggle';
+import type { ToggleSize } from '../src/components/pao-toggle/pao-toggle';
 
-describe('PaoRadio', () => {
+describe('PaoToggle', () => {
   it('has correct default properties', () => {
-    const el = new PaoRadio();
+    const el = new PaoToggle();
     expect(el.value).toBe('');
     expect(el.name).toBe('');
     expect(el.checked).toBe(false);
     expect(el.disabled).toBe(false);
+    expect(el.required).toBe(false);
     expect(el.size).toBe('md');
     expect(el.label).toBe('');
     expect(el.error).toBe('');
@@ -35,33 +36,33 @@ describe('PaoRadio', () => {
   });
 
   it('accepts all size values', () => {
-    const sizes: RadioSize[] = ['sm', 'md', 'lg'];
+    const sizes: ToggleSize[] = ['sm', 'md', 'lg'];
     for (const size of sizes) {
-      const el = new PaoRadio();
+      const el = new PaoToggle();
       el.size = size;
       expect(el.size).toBe(size);
     }
   });
 
-  it('emits paoChange when handleChange is called', () => {
-    const el = new PaoRadio();
-    el.value = 'option-a';
+  it('emits paoChange and updates checked when handleChange is called', () => {
+    const el = new PaoToggle();
+    el.value = 'notifications';
     const fakeInput = { checked: true } as HTMLInputElement;
     const fakeEvent = { target: fakeInput } as unknown as Event;
 
     (el as any).handleChange(fakeEvent);
 
+    expect(el.checked).toBe(true);
     expect(el.dispatchEvent).toHaveBeenCalledWith(
       expect.objectContaining({
         type: 'paoChange',
-        detail: { value: 'option-a', checked: true },
+        detail: { value: 'notifications', checked: true },
       })
     );
-    expect(el.checked).toBe(true);
   });
 
   it('does not emit paoChange when disabled', () => {
-    const el = new PaoRadio();
+    const el = new PaoToggle();
     el.disabled = true;
     const fakeInput = { checked: true } as HTMLInputElement;
     const fakeEvent = { target: fakeInput } as unknown as Event;
@@ -71,39 +72,38 @@ describe('PaoRadio', () => {
     expect(el.dispatchEvent).not.toHaveBeenCalled();
   });
 
-  it('render returns defined result with defaults', () => {
-    const el = new PaoRadio();
+  it('updates checked to false when unchecked', () => {
+    const el = new PaoToggle();
+    el.checked = true;
+    const fakeInput = { checked: false } as HTMLInputElement;
+    const fakeEvent = { target: fakeInput } as unknown as Event;
+
+    (el as any).handleChange(fakeEvent);
+
+    expect(el.checked).toBe(false);
+    expect(el.dispatchEvent).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: { value: '', checked: false },
+      })
+    );
+  });
+
+  it('render returns defined result', () => {
+    const el = new PaoToggle();
     expect(el.render()).toBeDefined();
   });
 
   it('render returns defined result when disabled', () => {
-    const el = new PaoRadio();
+    const el = new PaoToggle();
     el.disabled = true;
     expect(el.render()).toBeDefined();
   });
 
-  it('render returns defined result with label', () => {
-    const el = new PaoRadio();
-    el.label = 'Option A';
-    expect(el.render()).toBeDefined();
-  });
-
-  it('render returns defined result with error', () => {
-    const el = new PaoRadio();
-    el.error = 'Please select an option';
-    expect(el.render()).toBeDefined();
-  });
-
-  it('render returns defined result with helperText (no error)', () => {
-    const el = new PaoRadio();
-    el.helperText = 'Choose the option that best fits';
-    expect(el.render()).toBeDefined();
-  });
-
-  it('render returns defined result with helperText suppressed by error', () => {
-    const el = new PaoRadio();
-    el.error = 'Error shown';
-    el.helperText = 'Helper hidden';
+  it('render returns defined result with label, error, helperText', () => {
+    const el = new PaoToggle();
+    el.label = 'Enable alerts';
+    el.error = 'Required';
+    el.helperText = 'Helper';
     expect(el.render()).toBeDefined();
   });
 });
