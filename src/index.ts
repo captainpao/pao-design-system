@@ -12,3 +12,6 @@ export * from './components/pao-radio/pao-radio';
 export * from './components/pao-radio-group/pao-radio-group';
 export * from './components/pao-select-option/pao-select-option';
 export * from './components/pao-select/pao-select';
+export * from './components/pao-toggle/pao-toggle';
+export * from './components/pao-textarea/pao-textarea';
+export * from './components/pao-toast/pao-toast';
