@@ -28,3 +28,6 @@ pnpm-debug.log*
 .env.*.local
 .claude/settings.local.json
 .playwright-mcp/
+
+# Nested repo copy
+/pao-design-system/
