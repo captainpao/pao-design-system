@@ -17,3 +17,4 @@ export * from './components/pao-textarea/pao-textarea';
 export * from './components/pao-toast/pao-toast';
 export * from './components/pao-modal/pao-modal';
 export * from './components/pao-tooltip/pao-tooltip';
+export * from './components/pao-card/pao-card';

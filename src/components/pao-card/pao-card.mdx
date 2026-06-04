@@ -1,0 +1,41 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as CardStories from './pao-card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+
+A content container with optional header, body, and footer zones. Purely presentational — no events.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Properties
+
+| Property | Type | Default | Description |
+|---|---|---|---|
+| `shadow` | `boolean` | `false` | Adds a drop shadow |
+| `padded` | `boolean` | `true` | Adds internal padding to header, body, and footer |
+
+## Slots
+
+| Slot | Description |
+|---|---|
+| `header` | Card title area — rendered above the body with a bottom border. Hidden when empty. |
+| *(default)* | Card body content |
+| `footer` | Card action area — rendered below the body with a top border. Hidden when empty. |
+
+## Usage
+
+```html
+<pao-card shadow>
+  <span slot="header">Card Title</span>
+  <p>Card body content goes here.</p>
+  <div slot="footer">Footer actions</div>
+</pao-card>
+```
