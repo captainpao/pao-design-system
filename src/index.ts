@@ -18,3 +18,4 @@ export * from './components/pao-toast/pao-toast';
 export * from './components/pao-modal/pao-modal';
 export * from './components/pao-tooltip/pao-tooltip';
 export * from './components/pao-card/pao-card';
+export * from './components/pao-progress/pao-progress';
