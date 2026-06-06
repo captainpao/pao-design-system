@@ -1,0 +1,47 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as TabsStories from './pao-tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+Tab navigation for switching between related content panels. Uses `pao-tabs` as the container with `pao-tab` elements as individual panels.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## pao-tabs Properties
+
+| Property | Type | Default | Description |
+|---|---|---|---|
+| `value` | `string` | `''` | Value of the active tab — auto-selects first non-disabled tab if empty |
+| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | Layout direction of the tab bar |
+| `variant` | `'line' \| 'pill'` | `'line'` | Visual style of the tab triggers |
+
+## pao-tab Properties
+
+| Property | Type | Default | Description |
+|---|---|---|---|
+| `value` | `string` | `''` | Unique identifier — matched against `pao-tabs` value |
+| `label` | `string` | `''` | Text shown in the tab trigger button |
+| `disabled` | `boolean` | `false` | Prevents this tab from being selected |
+| `active` | `boolean` | `false` | Set automatically by `pao-tabs` — do not set manually |
+
+## Events
+
+- `paoChange` on `pao-tabs`: Fired when the active tab changes. `event.detail = { value: string }`
+
+## Usage
+
+```html
+<pao-tabs value="overview">
+  <pao-tab value="overview" label="Overview">Overview content.</pao-tab>
+  <pao-tab value="details" label="Details">Details content.</pao-tab>
+  <pao-tab value="settings" label="Settings" disabled>Settings (locked).</pao-tab>
+</pao-tabs>
+```
