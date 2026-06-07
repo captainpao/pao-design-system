@@ -21,3 +21,4 @@ export * from './components/pao-card/pao-card';
 export * from './components/pao-progress/pao-progress';
 export * from './components/pao-tab/pao-tab';
 export * from './components/pao-tabs/pao-tabs';
+export * from './components/pao-accordion-item/pao-accordion-item';
