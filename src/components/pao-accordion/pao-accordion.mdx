@@ -1,0 +1,44 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as AccordionStories from './pao-accordion.stories';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+Expandable/collapsible content sections. Uses `pao-accordion` as the container with `pao-accordion-item` elements for each section.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## pao-accordion Properties
+
+| Property | Type | Default | Description |
+|---|---|---|---|
+| `allowMultiple` | `boolean` | `false` | When false, opening one item automatically closes all others |
+
+## pao-accordion-item Properties
+
+| Property | Type | Default | Description |
+|---|---|---|---|
+| `label` | `string` | `''` | Text shown in the trigger header |
+| `open` | `boolean` | `false` | Whether the content panel is expanded |
+| `disabled` | `boolean` | `false` | Prevents toggling |
+
+## Events
+
+- `paoToggle` on `pao-accordion-item`: Fired on toggle. `event.detail = { open: boolean }`
+
+## Usage
+
+```html
+<pao-accordion>
+  <pao-accordion-item label="Section 1">Content for section 1.</pao-accordion-item>
+  <pao-accordion-item label="Section 2" open>Starts expanded.</pao-accordion-item>
+  <pao-accordion-item label="Section 3" disabled>Cannot expand.</pao-accordion-item>
+</pao-accordion>
+```
