@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # Nested repo copy
 /pao-design-system/
+
+# playwright-cli session artifacts
+.playwright-cli/

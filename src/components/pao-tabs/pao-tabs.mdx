@@ -11,26 +11,48 @@ Tab navigation for switching between related content panels. Uses `pao-tabs` as 
 
 <Primary />
 
-## Properties
+## Properties (pao-tabs)
 
 <Controls />
 
-## pao-tabs Properties
-
-| Property | Type | Default | Description |
-|---|---|---|---|
-| `value` | `string` | `''` | Value of the active tab — auto-selects first non-disabled tab if empty |
-| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | Layout direction of the tab bar |
-| `variant` | `'line' \| 'pill'` | `'line'` | Visual style of the tab triggers |
-
 ## pao-tab Properties
 
-| Property | Type | Default | Description |
-|---|---|---|---|
-| `value` | `string` | `''` | Unique identifier — matched against `pao-tabs` value |
-| `label` | `string` | `''` | Text shown in the tab trigger button |
-| `disabled` | `boolean` | `false` | Prevents this tab from being selected |
-| `active` | `boolean` | `false` | Set automatically by `pao-tabs` — do not set manually |
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>value</code></td>
+      <td><code>string</code></td>
+      <td><code>''</code></td>
+      <td>Unique identifier — matched against <code>pao-tabs</code> value</td>
+    </tr>
+    <tr>
+      <td><code>label</code></td>
+      <td><code>string</code></td>
+      <td><code>''</code></td>
+      <td>Text shown in the tab trigger button</td>
+    </tr>
+    <tr>
+      <td><code>disabled</code></td>
+      <td><code>boolean</code></td>
+      <td><code>false</code></td>
+      <td>Prevents this tab from being selected</td>
+    </tr>
+    <tr>
+      <td><code>active</code></td>
+      <td><code>boolean</code></td>
+      <td><code>false</code></td>
+      <td>Set automatically by <code>pao-tabs</code> — do not set manually</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Events
 

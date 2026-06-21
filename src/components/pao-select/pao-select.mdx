@@ -15,22 +15,6 @@ A custom dropdown for single or multi-option selection. Styled to match `pao-inp
 
 <Controls />
 
-## API
-
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| `value` | `string` | `''` | Selected value (single-select mode) |
-| `values` | `string[]` | `[]` | Selected values (multi-select mode) |
-| `name` | `string` | `''` | Input name for form submission |
-| `label` | `string` | `''` | Label displayed above the trigger |
-| `placeholder` | `string` | `'Select...'` | Placeholder shown when nothing is selected |
-| `multiple` | `boolean` | `false` | Enables multi-select mode |
-| `disabled` | `boolean` | `false` | Disables the select |
-| `required` | `boolean` | `false` | Marks as required (adds * to label) |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Trigger size |
-| `error` | `string` | `''` | Error message shown below the trigger |
-| `helperText` | `string` | `''` | Helper text shown below the trigger when no error |
-
 ## Events
 
 - `paoChange`: Fired on selection. `event.detail = { value: string, values: string[] }` — both always present.
@@ -39,17 +23,62 @@ A custom dropdown for single or multi-option selection. Styled to match `pao-inp
 
 Options are slotted `<pao-select-option>` elements.
 
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| `value` | `string` | `''` | The value emitted on selection |
-| `disabled` | `boolean` | `false` | Prevents this option from being selected |
-| `selected` | `boolean` | `false` | Set automatically by `pao-select` — do not set manually |
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>value</code></td>
+      <td><code>string</code></td>
+      <td><code>''</code></td>
+      <td>The value emitted on selection</td>
+    </tr>
+    <tr>
+      <td><code>disabled</code></td>
+      <td><code>boolean</code></td>
+      <td><code>false</code></td>
+      <td>Prevents this option from being selected</td>
+    </tr>
+    <tr>
+      <td><code>selected</code></td>
+      <td><code>boolean</code></td>
+      <td><code>false</code></td>
+      <td>Set automatically by <code>pao-select</code> — do not set manually</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Keyboard Navigation
 
-| Key | Action |
-|-----|--------|
-| `ArrowDown` | Move focus to next option |
-| `ArrowUp` | Move focus to previous option |
-| `Enter` / `Space` | Select focused option |
-| `Escape` | Close dropdown |
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ArrowDown</code></td>
+      <td>Move focus to next option</td>
+    </tr>
+    <tr>
+      <td><code>ArrowUp</code></td>
+      <td>Move focus to previous option</td>
+    </tr>
+    <tr>
+      <td><code>Enter</code> / <code>Space</code></td>
+      <td>Select focused option</td>
+    </tr>
+    <tr>
+      <td><code>Escape</code></td>
+      <td>Close dropdown</td>
+    </tr>
+  </tbody>
+</table>
