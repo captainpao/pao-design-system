@@ -1,0 +1,61 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as AlertStories from './pao-alert.stories';
+
+<Meta of={AlertStories} />
+
+# Alert
+
+A contextual feedback message for user actions or system states. Supports four severity variants with optional heading, icon, and dismiss button.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Events
+
+- `paoDismiss`: Fired when the user clicks the dismiss button. No detail payload.
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>(default)</em></td>
+      <td>Alert body content. Rendered below the optional heading.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Usage
+
+```html
+<!-- Basic info alert -->
+<pao-alert variant="info">
+  Your session will expire in 5 minutes.
+</pao-alert>
+
+<!-- Success alert with heading -->
+<pao-alert variant="success" heading="Saved!">
+  Your changes have been saved successfully.
+</pao-alert>
+
+<!-- Dismissible danger alert -->
+<pao-alert variant="danger" heading="Error" dismissible>
+  Something went wrong. Please try again.
+</pao-alert>
+
+<!-- Alert without icon -->
+<pao-alert variant="warning" icon="false">
+  Please review your input before continuing.
+</pao-alert>
+```
