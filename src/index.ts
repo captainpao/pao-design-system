@@ -23,3 +23,5 @@ export * from './components/pao-tab/pao-tab';
 export * from './components/pao-tabs/pao-tabs';
 export * from './components/pao-accordion-item/pao-accordion-item';
 export * from './components/pao-accordion/pao-accordion';
+export * from './components/pao-alert/pao-alert';
+export * from './components/pao-tag/pao-tag';

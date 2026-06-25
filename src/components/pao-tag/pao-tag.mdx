@@ -1,0 +1,50 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as TagStories from './pao-tag.stories';
+
+<Meta of={TagStories} />
+
+# Tag
+
+A compact label element for categorizing, filtering, or highlighting items. Supports multiple variants, two sizes, and an optional remove button.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Events
+
+- `paoRemove`: Fired when the remove button is clicked (only when `removable` is `true`). No detail payload.
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>(default)</em></td>
+      <td>The tag label content.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Usage
+
+```html
+<!-- Basic tag -->
+<pao-tag>Label</pao-tag>
+
+<!-- With variant -->
+<pao-tag variant="success">Active</pao-tag>
+
+<!-- Small removable tag -->
+<pao-tag variant="primary" size="sm" removable>React</pao-tag>
+```
