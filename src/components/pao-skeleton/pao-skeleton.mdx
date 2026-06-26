@@ -1,0 +1,101 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as SkeletonStories from './pao-skeleton.stories';
+
+<Meta of={SkeletonStories} />
+
+# Skeleton
+
+A loading placeholder that mimics the shape of content while it loads. Supports text lines, circles, and rectangles with an optional shimmer animation.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Slots
+
+This component has no slots — it is a self-contained visual placeholder.
+
+## Variants
+
+<table>
+  <thead>
+    <tr>
+      <th>Variant</th>
+      <th>Default size</th>
+      <th>Use for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>text</code></td>
+      <td><code>height: 1em</code></td>
+      <td>Single lines of body text</td>
+    </tr>
+    <tr>
+      <td><code>circle</code></td>
+      <td><code>40px × 40px</code></td>
+      <td>Avatars or icon placeholders</td>
+    </tr>
+    <tr>
+      <td><code>rect</code></td>
+      <td><code>height: 1.2em</code></td>
+      <td>Images, cards, banners</td>
+    </tr>
+  </tbody>
+</table>
+
+## Usage
+
+```html
+<!-- Text line placeholder -->
+<pao-skeleton variant="text"></pao-skeleton>
+
+<!-- Circle avatar placeholder -->
+<pao-skeleton variant="circle" height="48px"></pao-skeleton>
+
+<!-- Image / card placeholder -->
+<pao-skeleton variant="rect" height="200px"></pao-skeleton>
+
+<!-- Static (no animation) -->
+<pao-skeleton variant="text" ?animated="${false}"></pao-skeleton>
+
+<!-- Card layout placeholder -->
+<div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 320px;">
+  <pao-skeleton variant="rect" height="160px"></pao-skeleton>
+  <div style="display: flex; gap: 0.75rem; align-items: center;">
+    <pao-skeleton variant="circle" height="40px"></pao-skeleton>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+      <pao-skeleton variant="text" width="60%"></pao-skeleton>
+      <pao-skeleton variant="text" width="40%"></pao-skeleton>
+    </div>
+  </div>
+  <pao-skeleton variant="text"></pao-skeleton>
+  <pao-skeleton variant="text"></pao-skeleton>
+  <pao-skeleton variant="text" width="75%"></pao-skeleton>
+</div>
+```
+
+## CSS Custom Properties
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--pao-gray-100</code></td>
+      <td>Shimmer highlight color (lighter band)</td>
+    </tr>
+    <tr>
+      <td><code>--pao-gray-200</code></td>
+      <td>Base skeleton background color</td>
+    </tr>
+  </tbody>
+</table>
