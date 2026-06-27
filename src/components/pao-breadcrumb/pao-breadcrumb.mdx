@@ -1,0 +1,89 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as BreadcrumbStories from './pao-breadcrumb.stories';
+
+<Meta of={BreadcrumbStories} />
+
+# Breadcrumb
+
+A navigation landmark that shows the user's location within a hierarchy of pages. Consumer markup places links and the current-page indicator directly in the default slot; the component injects separators via CSS `::slotted`.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>(default)</em></td>
+      <td>Breadcrumb items — typically <code>&lt;a href&gt;</code> for ancestor pages and <code>&lt;span aria-current="page"&gt;</code> for the current page.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Events
+
+This component emits no custom events.
+
+## Usage
+
+```html
+<!-- Basic 3-level breadcrumb -->
+<pao-breadcrumb>
+  <a href="/">Home</a>
+  <a href="/products">Products</a>
+  <span aria-current="page">Widgets</span>
+</pao-breadcrumb>
+
+<!-- Custom separator -->
+<pao-breadcrumb separator="›">
+  <a href="/">Home</a>
+  <a href="/docs">Docs</a>
+  <span aria-current="page">Getting Started</span>
+</pao-breadcrumb>
+```
+
+## CSS Custom Properties
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--pao-breadcrumb-separator</code></td>
+      <td><code>'/'</code></td>
+      <td>Separator string injected between items via CSS <code>content</code>. Controlled by the <code>separator</code> property.</td>
+    </tr>
+    <tr>
+      <td><code>--pao-link-color</code></td>
+      <td><code>#0d6efd</code></td>
+      <td>Color applied to ancestor breadcrumb links.</td>
+    </tr>
+    <tr>
+      <td><code>--pao-gray-600</code></td>
+      <td><code>#6c757d</code></td>
+      <td>Color applied to the last (current-page) item.</td>
+    </tr>
+    <tr>
+      <td><code>--pao-gray-400</code></td>
+      <td><code>#ced4da</code></td>
+      <td>Color applied to separator characters.</td>
+    </tr>
+  </tbody>
+</table>
