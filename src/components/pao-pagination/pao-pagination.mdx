@@ -1,0 +1,52 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as PaginationStories from './pao-pagination.stories';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+A navigation component for paging through large data sets. Automatically renders ellipsis truncation when there are many pages, keeping the control compact at any page count.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties
+
+<Controls />
+
+## Events
+
+- `paoPageChange`: Fired when the user navigates to a new page. `event.detail = { page: number }`
+
+## Slots
+
+This component has no slots — it is fully self-contained.
+
+## Keyboard & Accessibility
+
+- Each page button carries `aria-label` for screen readers.
+- The active page button has `aria-current="page"`.
+- The `<nav>` wrapper has `aria-label="Pagination"`.
+- Ellipsis spans are marked `aria-hidden="true"`.
+
+## Usage
+
+```html
+<!-- Basic pagination for 100 items, 10 per page -->
+<pao-pagination total="100" pageSize="10" current="1"></pao-pagination>
+
+<!-- Many pages with wider sibling window -->
+<pao-pagination total="500" pageSize="10" current="25" siblingCount="2"></pao-pagination>
+
+<!-- Show first/last jump buttons -->
+<pao-pagination total="200" pageSize="10" current="5" showEdges></pao-pagination>
+```
+
+```javascript
+// Listen for page changes
+document.querySelector('pao-pagination').addEventListener('paoPageChange', (e) => {
+  console.log('Navigated to page', e.detail.page);
+  loadData(e.detail.page);
+});
+```

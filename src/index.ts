@@ -26,3 +26,5 @@ export * from './components/pao-accordion/pao-accordion';
 export * from './components/pao-alert/pao-alert';
 export * from './components/pao-tag/pao-tag';
 export * from './components/pao-skeleton/pao-skeleton';
+export * from './components/pao-breadcrumb/pao-breadcrumb';
+export * from './components/pao-pagination/pao-pagination';
