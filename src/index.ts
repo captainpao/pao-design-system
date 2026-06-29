@@ -28,3 +28,4 @@ export * from './components/pao-tag/pao-tag';
 export * from './components/pao-skeleton/pao-skeleton';
 export * from './components/pao-breadcrumb/pao-breadcrumb';
 export * from './components/pao-pagination/pao-pagination';
+export * from './components/pao-menu-item/pao-menu-item';
