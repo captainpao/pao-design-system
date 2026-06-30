@@ -1,0 +1,130 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import * as MenuStories from './pao-menu.stories';
+
+<Meta of={MenuStories} />
+
+# Menu
+
+A dropdown menu that pairs a trigger element with a list of selectable `pao-menu-item` children. Supports keyboard navigation (ArrowDown/ArrowUp to move focus, Escape to close) and closes on outside click.
+
+## Interactive Demo
+
+<Primary />
+
+## Properties (pao-menu)
+
+<Controls />
+
+## pao-menu-item Properties
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>value</code></td>
+      <td><code>string</code></td>
+      <td><code>''</code></td>
+      <td>Value emitted in <code>paoSelect</code> detail when the item is clicked</td>
+    </tr>
+    <tr>
+      <td><code>label</code></td>
+      <td><code>string</code></td>
+      <td><code>''</code></td>
+      <td>Fallback text shown when no slot content is provided</td>
+    </tr>
+    <tr>
+      <td><code>disabled</code></td>
+      <td><code>boolean</code></td>
+      <td><code>false</code></td>
+      <td>Prevents selection and dims the item visually</td>
+    </tr>
+  </tbody>
+</table>
+
+## Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Element</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>trigger</code></td>
+      <td><code>pao-menu</code></td>
+      <td>The element that toggles the dropdown (e.g. a button)</td>
+    </tr>
+    <tr>
+      <td><em>(default)</em></td>
+      <td><code>pao-menu</code></td>
+      <td>One or more <code>pao-menu-item</code> elements</td>
+    </tr>
+    <tr>
+      <td><em>(default)</em></td>
+      <td><code>pao-menu-item</code></td>
+      <td>Label text for the item; falls back to the <code>label</code> property</td>
+    </tr>
+  </tbody>
+</table>
+
+## Events
+
+- `paoOpenChange` on `pao-menu`: Fired when the menu opens or closes. `event.detail = { open: boolean }`
+- `paoSelect` on `pao-menu`: Fired when a child item is selected (re-emitted from the child). `event.detail = { value: string }`
+- `paoSelect` on `pao-menu-item`: Fired when the item is clicked (not disabled). `event.detail = { value: string }`
+
+## Keyboard Navigation
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ArrowDown</code></td>
+      <td>Move focus to the next enabled menu item</td>
+    </tr>
+    <tr>
+      <td><code>ArrowUp</code></td>
+      <td>Move focus to the previous enabled menu item</td>
+    </tr>
+    <tr>
+      <td><code>Escape</code></td>
+      <td>Close the menu</td>
+    </tr>
+    <tr>
+      <td><code>Enter</code> / <code>Space</code></td>
+      <td>Activate the focused menu item (native button behaviour)</td>
+    </tr>
+  </tbody>
+</table>
+
+## Usage
+
+```html
+<pao-menu>
+  <pao-button slot="trigger" variant="secondary">Actions ▾</pao-button>
+  <pao-menu-item value="edit">Edit</pao-menu-item>
+  <pao-menu-item value="duplicate">Duplicate</pao-menu-item>
+  <pao-menu-item value="delete" disabled>Delete</pao-menu-item>
+</pao-menu>
+
+<script>
+  document.querySelector('pao-menu').addEventListener('paoSelect', (e) => {
+    console.log('Selected:', e.detail.value);
+  });
+</script>
+```
